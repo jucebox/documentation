@@ -172,233 +172,438 @@ Contents:
 \item[] Es können beliebig viele nomos Systeme gleichzeitig auf das KNXnet/IP-Device gleichberechtigt zugreifen. Die Konfigurationsdatei heisst knx.csv und wird im misc-Ordner abgelegt. In der knx.csv angelegte Adressen werden konvertiert, ggf. Actions ausgeführt und über den Broadcast Port ausgegeben.
 \end{DUlineblock}
 
-\textbf{Aufbau der Definitionstabelle:}
+\begin{DUlineblock}{0em}
+\item[] 
+\item[] \textbf{Aufbau der Definitionstabelle:}
+\end{DUlineblock}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-Typ:    csv Datei
-Ort:    .\PYGZbs{}\PYGZob{}projectPath\PYGZcb{}\PYGZbs{}misc\PYGZbs{}
-Name:   knx.csv
-Länge:  10000 Zeilen/Einträge
-Event:  BC, Status
-Export: nein
-Lizenz: ja
+\begin{tabulary}{\linewidth}{|L|L|}
+\hline
 
-Die knx.csv besteht aus 3 Sektionen:
+Typ:
+ & 
+csv Datei
+\\
 
-[CONFIG];
- allgemeine Konfiguration der Interface Parameter
+Ort:
+ & 
+.\{projectPath\}misc
+\\
 
-[DATAPOINTS];
- Definition von Datenpunkten, die über KNXnet/IP empfangen und ausgewertet werden sollen.
+Name:
+ & 
+knx.csv
+\\
 
-[TABLE=\PYGZob{}NAME\PYGZcb{}];
- Scan Definitionstabellen, Gruppenpollen
-\end{Verbatim}
+Länge:
+ & 
+10000 Zeilen/Einträge
+\\
+
+Event:
+ & 
+BC, Status
+\\
+
+Export:
+ & 
+nein
+\\
+
+Lizenz:
+ & 
+ja
+\\
+\hline\end{tabulary}
+
+
+\begin{DUlineblock}{0em}
+\item[] Die knx.csv besteht aus 3 Sektionen:
+\end{DUlineblock}
+\begin{itemize}
+\item {} 
+{[}CONFIG{]};                     allgemeine Konfiguration der Interface Parameter
+
+\item {} 
+{[}DATAPOINTS{]};         Definition von Datenpunkten, die über KNXnet/IP empfangen und ausgewertet werden sollen.
+
+\item {} 
+{[}TABLE=\{NAME\}{]};       Scan Definitionstabellen, Gruppenpollen
+
+\end{itemize}
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
 
 \textbf{Aufbau:}
-\begin{quote}
 
 {[}CONFIG{]}; \textbf{Sektion}
-\begin{description}
-\item[{ACTIVE;YES;}] \leavevmode\begin{description}
-\item[{Schaltet den KNXnet/IP Support}] \leavevmode
-„YES“ = ein,
-„NO“ = aus
+\begin{itemize}
+\item {} \begin{description}
+\item[{ACTIVE;YES;}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] Schaltet den KNXnet/IP Support
+\item[] „YES“ = ein,
+\item[] „NO“ = aus
+\end{DUlineblock}
 
 \end{description}
 
-\item[{DEBUG;YES;}] \leavevmode\begin{description}
-\item[{Schalter für}] \leavevmode
-„YES“ = erweiterte Logausgaben (Busmonitor)
-„NO“ = standard Logausgaben
+\item {} \begin{description}
+\item[{DEBUG;YES;}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] Schalter für
+\item[] „YES“ = erweiterte Logausgaben (Busmonitor)
+\item[] „NO“ = standard Logausgaben
+\end{DUlineblock}
 
 \end{description}
 
+\item {} \begin{description}
 \item[{ESF;\{ESF File\};}] \leavevmode
-Name der .esf-Datei in dem Ordner misc
-(knx.esf = Default)
+\begin{DUlineblock}{0em}
+\item[] Name der .esf-Datei in dem Ordner misc
+\item[] (knx.esf = Default)
+\end{DUlineblock}
 
+\end{description}
+
+\item {} \begin{description}
 \item[{PHYSADDR;\{Phys.Adresse\};}] \leavevmode
-Lokale Physikalische Absenderadresse, die mmh beim Versenden verwenden soll.
+\begin{DUlineblock}{0em}
+\item[] Lokale Physikalische Absenderadresse, die mmh beim Versenden verwenden soll.
+\end{DUlineblock}
 
+\end{description}
+
+\item {} \begin{description}
 \item[{ADDRTYPE;\{Adresstyp\};}] \leavevmode
-„2STEP“ = 2stufige Darstellung, „3STEP“ = 3stufige
-Darstellung (Default)
-
-\item[{DPTNAMES;YES;}] \leavevmode\begin{description}
-\item[{Schaltet die Namen der Datenpunkte im Broadcast}] \leavevmode
-„YES“ = ein (Default),
-„NO“ = aus
+\begin{DUlineblock}{0em}
+\item[] „2STEP“ = 2stufige Darstellung,
+\item[] „3STEP“ = 3stufige Darstellung (Default)
+\end{DUlineblock}
 
 \end{description}
 
-\item[{MATCHLOCAL;YES;}] \leavevmode\begin{description}
-\item[{Legt fest, ob die unter DATAPOINTS definierten Aktionen auch dann ausgeführt werden, wenn der Deamon selbst auf die Datenpunkte schreibt.}] \leavevmode
-„YES“ = ein,
-„NO“ = aus (Default)
+\item {} \begin{description}
+\item[{DPTNAMES;YES;}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] Schaltet die Namen der Datenpunkte im Broadcast
+\item[] „YES“ = ein (Default),
+\item[] „NO“ = aus
+\end{DUlineblock}
 
 \end{description}
 
-\item[{INITSCAN;YES;}] \leavevmode\begin{description}
-\item[{scannt die definierten Tabellen beim Engine-Start}] \leavevmode
-„YES/ALL“ = ein,
-„NO“ = aus (Default)
+\item {} \begin{description}
+\item[{MATCHLOCAL;YES;}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] Legt fest, ob die unter DATAPOINTS definierten Aktionen auch dann ausgeführt werden, wenn der Deamon selbst auf die Datenpunkte schreibt.
+\item[] „YES“ = ein,
+\item[] „NO“ = aus (Default)
+\end{DUlineblock}
 
 \end{description}
 
+\item {} \begin{description}
+\item[{INITSCAN;YES;}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] scannt die definierten Tabellen beim Engine-Start
+\item[] „YES/ALL“ = ein,
+\item[] „NO“ = aus (Default)
+\end{DUlineblock}
+
+\end{description}
+
+\item {} \begin{description}
 \item[{SENDRATE;\{Telegr/s\};}] \leavevmode
-Begrenzt die Anzahl der Telegramme die pro Sekunde auf den Bus beschrieben werden. Der Puffer ist variabel und Burst fähig. „17“ (Default). Der hier eingestellte Wert gilt auch für den Abstand der Telegrammabfragen, die mit SCAN= initiert werden.
+\begin{DUlineblock}{0em}
+\item[] Begrenzt die Anzahl der Telegramme die pro Sekunde auf den Bus beschrieben werden. Der Puffer ist variabel und Burst fähig. „17“ (Default). Der hier eingestellte Wert gilt auch für den Abstand der Telegrammabfragen, die mit SCAN= initiert werden.
+\end{DUlineblock}
 
+\end{description}
+
+\item {} \begin{description}
 \item[{CONNECTIONTYPE;\{Protokolltyp\};}] \leavevmode
-„ROUTING“ (default: ROUTING)
-oder „TUNNELING“
-oder“ TUNNELING\_BRIDGE“
-
-\end{description}
-\end{quote}
-
-\textbf{Spezifische Einstellungen für die Betriebsart „ROUTING“:}
-
-CONNECTIONTYPE;ROUTING;
-
-\textbf{Bei} CONNECTIONTYPE;ROUTING \textbf{wird folgender, zusätzlicher Schalter benötigt:}
+\begin{DUlineblock}{0em}
+\item[] „ROUTING“ (default: ROUTING)
+\item[] oder „TUNNELING“
+\item[] oder“ TUNNELING\_BRIDGE“
+\end{DUlineblock}
 \begin{description}
-\item[{MULTICAST\_IP;\{Multicast ADR\};}] \leavevmode
-Multicast IP des Gerätes Standard:
-\{224.0.23.12\} oder „AUTO“ für automatisches Suchen
-(Default: AUTO)
+\item[{\textbf{Spezifische Einstellungen für die Betriebsart „ROUTING“:}}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] CONNECTIONTYPE;ROUTING;
+\item[] \textbf{Bei} CONNECTIONTYPE;ROUTING \textbf{wird folgender, zusätzlicher Schalter benötigt:}
+\item[] MULTICAST\_IP;\{Multicast ADR\};
+\item[] Multicast IP des Gerätes Standard: \{224.0.23.12\} oder „AUTO“ für automatisches Suchen
+\item[] (Default: AUTO)
+\end{DUlineblock}
 
 \end{description}
+
+\end{description}
+
+\end{itemize}
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
 
 {[}DATAPOINTS{]}; \textbf{Sektion}
-
+\begin{quote}
+\begin{itemize}
+\item {} 
 \{KNX/EIB Gruppenadresse\};\{Bedingung\};\{mmh-Sequenz\};
+
+\end{itemize}
 \begin{quote}
 
-In diesem Bereich können KNX Events direkt ausgewertet und entsprechende Aktionen eingeleitet werden.
-\end{quote}
+\begin{DUlineblock}{0em}
+\item[] In diesem Bereich können KNX Events direkt ausgewertet und entsprechende Aktionen eingeleitet werden.
+\end{DUlineblock}
 
-\textbf{Erläuterungen:}
+\begin{DUlineblock}{0em}
+\item[] \textbf{Erläuterungen:}
+\end{DUlineblock}
 
-\{KNX/EIB Gruppenadresse\} Gruppenandresse im entsprechend eingestelltem ADDRTYPE
-
-\{Bedingung\}     kann (entsprechend BAOS) folgende Zustände haben:
-\begin{description}
+\begin{DUlineblock}{0em}
+\item[] \{KNX/EIB Gruppenadresse\} Gruppenandresse im entsprechend eingestelltem ADDRTYPE
+\item[] \{Bedingung\} kann (entsprechend BAOS) folgende Zustände haben:
+\end{DUlineblock}
+\begin{itemize}
+\item {} \begin{description}
 \item[{\{Match-String\}}] \leavevmode
-der von KNX/IP übermittelte Wert muß mit
-
-\item[{\{Match-String\}}] \leavevmode
-übereinstimmen.
+\begin{DUlineblock}{0em}
+\item[] der von KNX/IP übermittelte Wert muß mit \{Match-String\} übereinstimmen.
+\end{DUlineblock}
 
 \end{description}
 
-\{\#\}     alle Werte starten das Script bzw. die Sequenz. Wenn \emph{\{Bedingung\}} leer ist, wird `\#' angenommen.
-\begin{description}
-\item[{\{mmh-Sequenz\}}] \leavevmode
-Auszuführende Kommandosequenz oder Scriptname, wenn \emph{Bedingung} erfüllt. Kann als Platzhalter für den Wert `\#'        beinhalten, bei Scripten wird der empfangene Wert als   Argument übergeben
+\item {} \begin{description}
+\item[{\{\#\}}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] alle Werte starten das Script bzw. die Sequenz. Wenn \emph{\{Bedingung\}} leer ist, wird `\#' angenommen.
+\end{DUlineblock}
 
-\item[{{[}TABLE=\{NAME\}{]}; \textbf{Sektion} \{NAME\} definiert eine entsprechende Gruppe.}] \leavevmode
+\end{description}
+
+\item {} \begin{description}
+\item[{\{mmh-Sequenz\}}] \leavevmode
+\begin{DUlineblock}{0em}
+\item[] Auszuführende Kommandosequenz oder Scriptname, wenn \emph{Bedingung} erfüllt. Kann als Platzhalter für den Wert `\#'       beinhalten, bei Scripten wird der empfangene Wert als   Argument übergeben
+\end{DUlineblock}
+
+\end{description}
+
+\end{itemize}
+\end{quote}
+\end{quote}
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
+\begin{description}
+\item[{{[}TABLE=\{NAME\}{]}; \textbf{Sektion} \{NAME\}}] \leavevmode
+definiert eine entsprechende Gruppe.
 Es können beliebig viele {[}TABLE=\{name\}{]} Sektionen angelegt werden.
 Diese Namen werden bei der Ausführung der SCAN Befehle benötigt und im weiterem Verlauf genauer erklärt.
-
+\begin{itemize}
+\item {} \begin{description}
 \item[{\{KNX/EIB Gruppenadresse\};}] \leavevmode
-Gruppenadressen die gescannt werden soll. Es darf nur eine Gruppenadresse je Zeile eingetragen werden.
+\begin{DUlineblock}{0em}
+\item[] Gruppenadressen die gescannt werden soll. Es darf nur eine Gruppenadresse je Zeile eingetragen werden.
+\end{DUlineblock}
 
 \end{description}
+
+\end{itemize}
+
+\end{description}
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
 
 \textbf{Beispiele für die Definitionen {[}DATAPOINTS{]} Sektion:}
-\begin{quote}
 
-8/1/4;1;\textless{}ITUNES\textgreater{}\textless{}NEXT\textgreater{}\textless{}PLAY\textgreater{}\textless{}/ITUNES\textgreater{}
-Bei Empfang der Adresse 8/1/4 mit dem Wert „1“ führt iTunes den internen Befehl „NEXT“ und PLAY aus.
+\begin{Verbatim}[commandchars=\\\{\}]
+8/1/4;1;\PYGZlt{}ITUNES\PYGZgt{}\PYGZlt{}NEXT\PYGZgt{}\PYGZlt{}PLAY\PYGZgt{}\PYGZlt{}/ITUNES\PYGZgt{}
+\end{Verbatim}
 
-Pro Adresse lassen sich mehrere Actions definieren, wenn unterschiedliche Match-Bedingungen angegeben werden. Bei identischen Match-Bedingungen pro Adresse wird nur die erste gefundene Action ausgeführt.
-\begin{description}
-\item[{15/7/10;1;\textless{}SYS\textgreater{}\textless{}SAY=on\textgreater{}\textless{}/SYS\textgreater{} oder 15/7/10;0;\textless{}SYS\textgreater{}\textless{}SAY=off\textgreater{}\textless{}/SYS\textgreater{}}] \leavevmode\begin{description}
-\item[{Führt nur bei Empfang einer logischen „1“ der Adresse 15/7/10 den Befehl}] \leavevmode
-\textless{}SYS\textgreater{}\textless{}SAY=on\textgreater{}\textless{}/SYS\textgreater{} aus. Bei empfang einer logischen „0“ wird nur der Befehl
-\textless{}SYS\textgreater{}\textless{}SAY=off\textgreater{}\textless{}/SYS\textgreater{} ausgeführt.
+\begin{DUlineblock}{0em}
+\item[] Bei Empfang der Adresse 8/1/4 mit dem Wert „1“ führt iTunes den internen Befehl „NEXT“ und PLAY aus.
+\item[] Pro Adresse lassen sich mehrere Actions definieren, wenn unterschiedliche Match-Bedingungen angegeben werden. Bei identischen Match-Bedingungen pro Adresse wird nur die erste gefundene Action ausgeführt.
+\end{DUlineblock}
 
-\end{description}
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
 
-\item[{8/1/7;\#;\textless{}SYS\textgreater{}\textless{}VOLSET=\#\textgreater{}\textless{}/SYS\textgreater{};}] \leavevmode
+\begin{Verbatim}[commandchars=\\\{\}]
+15/7/10;1;\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}SAY=on\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{} oder 15/7/10;0;\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}SAY=off\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{}
+\end{Verbatim}
+
+Führt nur bei Empfang einer logischen „1“ der Adresse 15/7/10 den Befehl
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}SAY=on\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{}
+\end{Verbatim}
+
+aus.
+
+Bei Empfang einer logischen „0“ wird nur der Befehl
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}SAY=off\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{}
+\end{Verbatim}
+
+ausgeführt.
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+m+mi}{8}\PYG{o}{/}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{7}\PYG{p}{;}\PYG{c}{\PYGZsh{};\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}VOLSET=\PYGZbs{}\PYGZsh{}\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{};}
+\end{Verbatim}
+
 Schreibt den empfangenen Wert auf die System Volume.
 
-\end{description}
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
 
-5/2/8;DOWN,100;\textless{}SYS\textgreater{}\textless{}VOLDN=5\textgreater{}\textless{}/SYS\textgreater{};
-5/2/8;UP,100;\textless{}SYS\textgreater{}\textless{}VOLUP=5\textgreater{}\textless{}/SYS\textgreater{};
+\begin{Verbatim}[commandchars=\\\{\}]
+5/2/8;DOWN,100;\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}VOLDN=5\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{};
+5/2/8;UP,100;\PYGZlt{}SYS\PYGZgt{}\PYGZlt{}VOLUP=5\PYGZgt{}\PYGZlt{}/SYS\PYGZgt{};
+\end{Verbatim}
+
+\begin{DUlineblock}{0em}
+\item[] Empfängt und wertet ein 4Bit Dimmtelegramm (EIS2) aus.
+\item[] Hierbei empfiehlt es sich, dass entsprechende KNX Telegramm zyklisch senden zu lassen
+\item[] (Einstellung am entspr. Sensor beachten), da der entsprechend auszuführende Befehl \{mmh-Sequenz\} nur je empfangenem  Telegramm angetriggert wird.
+\end{DUlineblock}
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
 \begin{quote}
-
-Empfängt und wertet ein 4Bit Dimmtelegramm (EIS2) aus.
-Hierbei empfiehlt es sich, dass entsprechende KNX Telegramm zyklisch senden zu lassen
-(Einstellung am entspr. Sensor beachten), da der entsprechend auszuführende Befehl \{mmh-Sequenz\} nur je empfangenem  Telegramm angetriggert wird.
-\end{quote}
-\end{quote}
 
 \textbf{Beispiele für den Scan Support:}
-\begin{quote}
 
-{[}TABLE=Wohnzimmer{]};
+\begin{Verbatim}[commandchars=\\\{\}]
+[TABLE=Wohnzimmer];
 1/8/4
 1/8/5
 1/8/7
 1/4/3
 
-{[}TABLE=Schlafzimmer{]};
+[TABLE=Schlafzimmer];
 1/4/3
 1/3/5
 1/2/7
+\end{Verbatim}
+\end{quote}
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
+\begin{quote}
 
 Definiert zwei Scan Tabellen, die unter Verwendung der SCAN Befehle abgerufen werden können. Der SCAN kann unmittelbar erfolgen, oder aber im Hintergrund ablaufen. Bitte beachten, dass ein SCAN nur funktionieren kann, wenn auch entsprechend das „l“ Flag des assoziierenden KNX Kommunikationsobjekt gesetzt ist. Je Adresse sollte dieses Flag nur einmalig an einem Kommunikationsobjekt gesetzt sein.
 \end{quote}
 
-\begin{Verbatim}[commandchars=\\\{\}]
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
+
 Die Unterscheidung in den beiden verschiedenen SCAN Methoden liegt im zeitlichen Abstand der Lese- anforderungen. Mit SCAN= können schnelle Abfragen generiert werden. Hier sollte jedoch beachtet werden, dass nicht zu viele Telegramme mit dieser Geschwindigkeit abgefragt werden. Für die störungsfreie Abfrage vieler Telegramme, wie zb für einen initial Scan, ist der BACKGROUNDSCAN= vorgesehen.
 
-Die Telegramme werden sequentiell nach Erhalt einer Antwort ausgeführt. Auf eine Antwort wird max. 1s gewartet. Wird innerhalb dieser Zeit keine Antwort empfangen, wir die Meldung ERR\PYGZus{}NO\PYGZus{}RESPONSE generiert. Die Antworten des Scan‘s erscheinen ebenfalls im Broadcast (BC):
+\textbf{Die Telegramme werden sequentiell nach Erhalt einer Antwort ausgeführt. Auf eine Antwort wird max. 1s gewartet. Wird innerhalb dieser Zeit keine Antwort empfangen, wir die Meldung ERR\_NO\_RESPONSE generiert. Die Antworten des Scan‘s erscheinen ebenfalls im Broadcast (BC):}
 
-       bc: \PYGZlt{}KNX\PYGZgt{}\PYGZlt{}15/2/181-Geli.DimBelLlp.ein/ausStatus=0\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
-       bc: \PYGZlt{}KNX\PYGZgt{}\PYGZlt{}15/5/28-SOLL\PYGZus{}TEMP\PYGZus{}Serverschrank=27.00\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
-       bc: \PYGZlt{}KNX\PYGZgt{}\PYGZlt{}15/2/21- mike.DimBelLlp.ein/ausStatus=0\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\begin{Verbatim}[commandchars=\\\{\}]
+bc: \PYGZlt{}KNX\PYGZgt{}\PYGZlt{}15/2/181-Geli.DimBelLlp.ein/ausStatus=0\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+bc: \PYGZlt{}KNX\PYGZgt{}\PYGZlt{}15/5/28-SOLL\PYGZus{}TEMP\PYGZus{}Serverschrank=27.00\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+bc: \PYGZlt{}KNX\PYGZgt{}\PYGZlt{}15/2/21- mike.DimBelLlp.ein/ausStatus=0\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
 \end{Verbatim}
 
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
+
 \textbf{Es existiert eine Befehlsklasse KNX mit folgenden Befehlen:}
-\begin{description}
-\item[{SETVALUE=\{KNX-Adresse\},\{Wert\}}] \leavevmode
+
+\begin{tabulary}{\linewidth}{|L|L|}
+\hline
+
+SETVALUE=\{KNX-Adresse\},\{Wert\}
+ & 
 Beschreibt eine KNX Gruppenadresse (muss in der .esf Datei definiert sein) mit einem Wert.
+\\
 
-\item[{GETVALUE=\{KNX-Adresse\}}] \leavevmode
+GETVALUE=\{KNX-Adresse\}
+ & 
 Liest den aktuellen Wert einer KNX Gruppenadresse (muss in der .esf Datei definiert sein).
+\\
 
-\item[{SCAN=\{Name\}}] \leavevmode
+SCAN=\{Name\}
+ & 
 Sendet an alle Adressen in der entsprechenden Tabelle einen KNX-Read-Befehl, sodass man mit einem Befehl ein komplettes Prozessabbild bekommen kann. Der Abstand der Abfragen kann mittels SENDRATE;x manipuliert werden.
+\\
 
-\item[{BACKGROUNDSCAN=\{Name\}}] \leavevmode
+BACKGROUNDSCAN=\{Name\}
+ & 
 Wie vor, führt jedoch einen reduzierten Scan im Hintergrund aus. Abstand der Telegramme = 300ms
+\\
+\hline\end{tabulary}
+
+
+\begin{DUlineblock}{0em}
+\item[] 
+\end{DUlineblock}
+\begin{quote}
 
 \textbf{Beispiele:}
 
-\textless{}KNX\textgreater{}\textless{}SCAN=Wohnzimmer\textgreater{}\textless{}/KNX\textgreater{}
-\textless{}KNX\textgreater{}\textless{}SCAN=Wohnzimmer\textgreater{}\textless{}SCAN=Schlafzimmer\textgreater{}\textless{}/KNX\textgreater{}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}SCAN=Wohnzimmer\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}SCAN=Wohnzimmer\PYGZgt{}\PYGZlt{}SCAN=Schlafzimmer\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\end{Verbatim}
+
 Löst die Abfrage der Gruppenadressen, wie z.B. unter {[}TABLE=Schlafzimmer{]} definiert aus. Es können auch mehre Tabellen gleichzeitig abgefragt werden.
 
-\textless{}KNX\textgreater{}\textless{}BACKGROUNDSCAN=Schlafzimmer\textgreater{}\textless{}/KNX\textgreater{}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}BACKGROUNDSCAN=Schlafzimmer\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\end{Verbatim}
+
 Löst den Hintergrundscan der Tabelle Schlafzimmer aus. Ein Hintergrundscan wird fix mit ca. 3 Telegramme/s ausgeführt.
 
-\textless{}KNX\textgreater{}\textless{}SETVALUE=1/2/3,1\textgreater{}\textless{}/KNX\textgreater{}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}SETVALUE=1/2/3,1\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\end{Verbatim}
+
 Setzt den Wert der Gruppenadresse 1/2/3 auf 1
 
-\textless{}KNX\textgreater{}\textless{}SETVALUE=1/2/3,1\textgreater{}\textless{}/KNX\textgreater{}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}SETVALUE=1/2/3,1\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\end{Verbatim}
+
 Setzt den Wert der Gruppenadresse 1/2/3 auf 1
 
-\textless{}KNX\textgreater{}\textless{}SETVALUE=0/0/1,{[}TIME{]}\textgreater{}\textless{}/KNX\textgreater{}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}SETVALUE=0/0/1,[TIME]\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\end{Verbatim}
+
 Setzt den Wert der Gruppenadresse 0/0/1 auf die aktuelle Systemzeit. Die fixe Systemvariable {[}TIME{]} ist im exakten Format für die Verwendung im KNX System formatiert. Gleiches gilt für die Verwendung der fixen Systemvariable {[}DATE{]}.
 
-\textless{}KNX\textgreater{}\textless{}GETVALUE=1/2/33\textgreater{}\textless{}/KNX\textgreater{}
-Wertabfrage der Gruppenadresse 1/2/33
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZlt{}KNX\PYGZgt{}\PYGZlt{}GETVALUE=1/2/33\PYGZgt{}\PYGZlt{}/KNX\PYGZgt{}
+\end{Verbatim}
 
-\end{description}
+Wertabfrage der Gruppenadresse 1/2/33
+\end{quote}
 
 
 \chapter{Indices and tables}
