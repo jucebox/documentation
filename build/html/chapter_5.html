@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>5. KNXnet &mdash; nomos 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="nomos 1.0 documentation" href="index.html" />
+    <link rel="prev" title="4. Kapitel 4" href="chapter_4.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter_4.html" title="4. Kapitel 4"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">nomos 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="knxnet">
+<h1>5. <strong>KNXnet</strong><a class="headerlink" href="#knxnet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="knxnet-1">
+<h2>5.1. KNXnet/1<a class="headerlink" href="#knxnet-1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="knxnet-2">
+<h2>5.2. KNXnet/2<a class="headerlink" href="#knxnet-2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="knxnet-3">
+<h2>5.3. KNXnet/3<a class="headerlink" href="#knxnet-3" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="knxnet-4">
+<h2>5.4. KNXnet/4<a class="headerlink" href="#knxnet-4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="knxnet-ip">
+<h2>5.5. KNXnet/IP<a class="headerlink" href="#knxnet-ip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="knxnet-ip-1">
+<h3>5.5.1. KNXnet/IP/1<a class="headerlink" href="#knxnet-ip-1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="knxnet-ip-2">
+<h3>5.5.2. KNXnet/IP/2<a class="headerlink" href="#knxnet-ip-2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="knxnet-ip-routing">
+<h3>5.5.3. KNXnet/IP Routing<a class="headerlink" href="#knxnet-ip-routing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="knxnet-ip-routing-support">
+<h4>5.5.3.1. KNXnet/IP Routing-Support<a class="headerlink" href="#knxnet-ip-routing-support" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><strong>Allgemeines:</strong></div>
+<div class="line">Beim Start wird automatisch ein KNX/IP routingfähiger IP-Router gesucht und gegebenenfalls im Log angezeigt. nomos liest die Mutlicast-Adresse des IP-Routers aus und tritt der entsprechenden Gruppe bei.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Vorteil der Routing Variante:</strong></div>
+<div class="line">Es können beliebig viele nomos Systeme gleichzeitig auf das KNXnet/IP-Device gleichberechtigt zugreifen. Die Konfigurationsdatei heisst knx.csv und wird im misc-Ordner abgelegt. In der knx.csv angelegte Adressen werden konvertiert, ggf. Actions ausgeführt und über den Broadcast Port ausgegeben.</div>
+</div>
+<p><strong>Aufbau der Definitionstabelle:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>Typ:    csv Datei
+Ort:    .\{projectPath}\misc\
+Name:   knx.csv
+Länge:  10000 Zeilen/Einträge
+Event:  BC, Status
+Export: nein
+Lizenz: ja
+
+Die knx.csv besteht aus 3 Sektionen:
+
+[CONFIG];
+ allgemeine Konfiguration der Interface Parameter
+
+[DATAPOINTS];
+ Definition von Datenpunkten, die über KNXnet/IP empfangen und ausgewertet werden sollen.
+
+[TABLE={NAME}];
+ Scan Definitionstabellen, Gruppenpollen
+</pre></div>
+</div>
+<p><strong>Aufbau:</strong></p>
+<blockquote>
+<div><p>[CONFIG]; <strong>Sektion</strong></p>
+<dl class="docutils">
+<dt>ACTIVE;YES;</dt>
+<dd><dl class="first last docutils">
+<dt>Schaltet den KNXnet/IP Support</dt>
+<dd>„YES“ = ein,
+„NO“ = aus</dd>
+</dl>
+</dd>
+<dt>DEBUG;YES;</dt>
+<dd><dl class="first last docutils">
+<dt>Schalter für</dt>
+<dd>„YES“ = erweiterte Logausgaben (Busmonitor)
+„NO“ = standard Logausgaben</dd>
+</dl>
+</dd>
+<dt>ESF;{ESF File};</dt>
+<dd>Name der .esf-Datei in dem Ordner misc
+(knx.esf = Default)</dd>
+<dt>PHYSADDR;{Phys.Adresse};</dt>
+<dd>Lokale Physikalische Absenderadresse, die mmh beim Versenden verwenden soll.</dd>
+<dt>ADDRTYPE;{Adresstyp};</dt>
+<dd>„2STEP“ = 2stufige Darstellung, „3STEP“ = 3stufige
+Darstellung (Default)</dd>
+<dt>DPTNAMES;YES;</dt>
+<dd><dl class="first last docutils">
+<dt>Schaltet die Namen der Datenpunkte im Broadcast</dt>
+<dd>„YES“ = ein (Default),
+„NO“ = aus</dd>
+</dl>
+</dd>
+<dt>MATCHLOCAL;YES;</dt>
+<dd><dl class="first last docutils">
+<dt>Legt fest, ob die unter DATAPOINTS definierten Aktionen auch dann ausgeführt werden, wenn der Deamon selbst auf die Datenpunkte schreibt.</dt>
+<dd>„YES“ = ein,
+„NO“ = aus (Default)</dd>
+</dl>
+</dd>
+<dt>INITSCAN;YES;</dt>
+<dd><dl class="first last docutils">
+<dt>scannt die definierten Tabellen beim Engine-Start</dt>
+<dd>„YES/ALL“ = ein,
+„NO“ = aus (Default)</dd>
+</dl>
+</dd>
+<dt>SENDRATE;{Telegr/s};</dt>
+<dd>Begrenzt die Anzahl der Telegramme die pro Sekunde auf den Bus beschrieben werden. Der Puffer ist variabel und Burst fähig. „17“ (Default). Der hier eingestellte Wert gilt auch für den Abstand der Telegrammabfragen, die mit SCAN= initiert werden.</dd>
+<dt>CONNECTIONTYPE;{Protokolltyp};</dt>
+<dd>„ROUTING“ (default: ROUTING)
+oder „TUNNELING“
+oder“ TUNNELING_BRIDGE“</dd>
+</dl>
+</div></blockquote>
+<p><strong>Spezifische Einstellungen für die Betriebsart „ROUTING“:</strong></p>
+<p>CONNECTIONTYPE;ROUTING;</p>
+<p><strong>Bei</strong> CONNECTIONTYPE;ROUTING <strong>wird folgender, zusätzlicher Schalter benötigt:</strong></p>
+<dl class="docutils">
+<dt>MULTICAST_IP;{Multicast ADR};</dt>
+<dd>Multicast IP des Gerätes Standard:
+{224.0.23.12} oder „AUTO“ für automatisches Suchen
+(Default: AUTO)</dd>
+</dl>
+<p>[DATAPOINTS]; <strong>Sektion</strong></p>
+<p>{KNX/EIB Gruppenadresse};{Bedingung};{mmh-Sequenz};</p>
+<blockquote>
+<div>In diesem Bereich können KNX Events direkt ausgewertet und entsprechende Aktionen eingeleitet werden.</div></blockquote>
+<p><strong>Erläuterungen:</strong></p>
+<p>{KNX/EIB Gruppenadresse} Gruppenandresse im entsprechend eingestelltem ADDRTYPE</p>
+<p>{Bedingung}     kann (entsprechend BAOS) folgende Zustände haben:</p>
+<dl class="docutils">
+<dt>{Match-String}</dt>
+<dd>der von KNX/IP übermittelte Wert muß mit</dd>
+<dt>{Match-String}</dt>
+<dd>übereinstimmen.</dd>
+</dl>
+<p>{#}     alle Werte starten das Script bzw. die Sequenz. Wenn <em>{Bedingung}</em> leer ist, wird &#8216;#&#8217; angenommen.</p>
+<dl class="docutils">
+<dt>{mmh-Sequenz}</dt>
+<dd>Auszuführende Kommandosequenz oder Scriptname, wenn <em>Bedingung</em> erfüllt. Kann als Platzhalter für den Wert &#8216;#&#8217;        beinhalten, bei Scripten wird der empfangene Wert als   Argument übergeben</dd>
+<dt>[TABLE={NAME}]; <strong>Sektion</strong> {NAME} definiert eine entsprechende Gruppe.</dt>
+<dd>Es können beliebig viele [TABLE={name}] Sektionen angelegt werden.
+Diese Namen werden bei der Ausführung der SCAN Befehle benötigt und im weiterem Verlauf genauer erklärt.</dd>
+<dt>{KNX/EIB Gruppenadresse};</dt>
+<dd>Gruppenadressen die gescannt werden soll. Es darf nur eine Gruppenadresse je Zeile eingetragen werden.</dd>
+</dl>
+<p><strong>Beispiele für die Definitionen [DATAPOINTS] Sektion:</strong></p>
+<blockquote>
+<div><p>8/1/4;1;&lt;ITUNES&gt;&lt;NEXT&gt;&lt;PLAY&gt;&lt;/ITUNES&gt;
+Bei Empfang der Adresse 8/1/4 mit dem Wert „1“ führt iTunes den internen Befehl „NEXT“ und PLAY aus.</p>
+<p>Pro Adresse lassen sich mehrere Actions definieren, wenn unterschiedliche Match-Bedingungen angegeben werden. Bei identischen Match-Bedingungen pro Adresse wird nur die erste gefundene Action ausgeführt.</p>
+<dl class="docutils">
+<dt>15/7/10;1;&lt;SYS&gt;&lt;SAY=on&gt;&lt;/SYS&gt; oder 15/7/10;0;&lt;SYS&gt;&lt;SAY=off&gt;&lt;/SYS&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>Führt nur bei Empfang einer logischen „1“ der Adresse 15/7/10 den Befehl</dt>
+<dd>&lt;SYS&gt;&lt;SAY=on&gt;&lt;/SYS&gt; aus. Bei empfang einer logischen „0“ wird nur der Befehl
+&lt;SYS&gt;&lt;SAY=off&gt;&lt;/SYS&gt; ausgeführt.</dd>
+</dl>
+</dd>
+<dt>8/1/7;#;&lt;SYS&gt;&lt;VOLSET=#&gt;&lt;/SYS&gt;;</dt>
+<dd>Schreibt den empfangenen Wert auf die System Volume.</dd>
+</dl>
+<p>5/2/8;DOWN,100;&lt;SYS&gt;&lt;VOLDN=5&gt;&lt;/SYS&gt;;
+5/2/8;UP,100;&lt;SYS&gt;&lt;VOLUP=5&gt;&lt;/SYS&gt;;</p>
+<blockquote>
+<div>Empfängt und wertet ein 4Bit Dimmtelegramm (EIS2) aus.
+Hierbei empfiehlt es sich, dass entsprechende KNX Telegramm zyklisch senden zu lassen
+(Einstellung am entspr. Sensor beachten), da der entsprechend auszuführende Befehl {mmh-Sequenz} nur je empfangenem  Telegramm angetriggert wird.</div></blockquote>
+</div></blockquote>
+<p><strong>Beispiele für den Scan Support:</strong></p>
+<blockquote>
+<div><p>[TABLE=Wohnzimmer];
+1/8/4
+1/8/5
+1/8/7
+1/4/3</p>
+<p>[TABLE=Schlafzimmer];
+1/4/3
+1/3/5
+1/2/7</p>
+<p>Definiert zwei Scan Tabellen, die unter Verwendung der SCAN Befehle abgerufen werden können. Der SCAN kann unmittelbar erfolgen, oder aber im Hintergrund ablaufen. Bitte beachten, dass ein SCAN nur funktionieren kann, wenn auch entsprechend das „l“ Flag des assoziierenden KNX Kommunikationsobjekt gesetzt ist. Je Adresse sollte dieses Flag nur einmalig an einem Kommunikationsobjekt gesetzt sein.</p>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>Die Unterscheidung in den beiden verschiedenen SCAN Methoden liegt im zeitlichen Abstand der Lese- anforderungen. Mit SCAN= können schnelle Abfragen generiert werden. Hier sollte jedoch beachtet werden, dass nicht zu viele Telegramme mit dieser Geschwindigkeit abgefragt werden. Für die störungsfreie Abfrage vieler Telegramme, wie zb für einen initial Scan, ist der BACKGROUNDSCAN= vorgesehen.
+
+Die Telegramme werden sequentiell nach Erhalt einer Antwort ausgeführt. Auf eine Antwort wird max. 1s gewartet. Wird innerhalb dieser Zeit keine Antwort empfangen, wir die Meldung ERR_NO_RESPONSE generiert. Die Antworten des Scan‘s erscheinen ebenfalls im Broadcast (BC):
+
+       bc: &lt;KNX&gt;&lt;15/2/181-Geli.DimBelLlp.ein/ausStatus=0&gt;&lt;/KNX&gt;
+       bc: &lt;KNX&gt;&lt;15/5/28-SOLL_TEMP_Serverschrank=27.00&gt;&lt;/KNX&gt;
+       bc: &lt;KNX&gt;&lt;15/2/21- mike.DimBelLlp.ein/ausStatus=0&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<p><strong>Es existiert eine Befehlsklasse KNX mit folgenden Befehlen:</strong></p>
+<dl class="docutils">
+<dt>SETVALUE={KNX-Adresse},{Wert}</dt>
+<dd>Beschreibt eine KNX Gruppenadresse (muss in der .esf Datei definiert sein) mit einem Wert.</dd>
+<dt>GETVALUE={KNX-Adresse}</dt>
+<dd>Liest den aktuellen Wert einer KNX Gruppenadresse (muss in der .esf Datei definiert sein).</dd>
+<dt>SCAN={Name}</dt>
+<dd>Sendet an alle Adressen in der entsprechenden Tabelle einen KNX-Read-Befehl, sodass man mit einem Befehl ein komplettes Prozessabbild bekommen kann. Der Abstand der Abfragen kann mittels SENDRATE;x manipuliert werden.</dd>
+<dt>BACKGROUNDSCAN={Name}</dt>
+<dd><p class="first">Wie vor, führt jedoch einen reduzierten Scan im Hintergrund aus. Abstand der Telegramme = 300ms</p>
+<p><strong>Beispiele:</strong></p>
+<p>&lt;KNX&gt;&lt;SCAN=Wohnzimmer&gt;&lt;/KNX&gt;
+&lt;KNX&gt;&lt;SCAN=Wohnzimmer&gt;&lt;SCAN=Schlafzimmer&gt;&lt;/KNX&gt;
+Löst die Abfrage der Gruppenadressen, wie z.B. unter [TABLE=Schlafzimmer] definiert aus. Es können auch mehre Tabellen gleichzeitig abgefragt werden.</p>
+<p>&lt;KNX&gt;&lt;BACKGROUNDSCAN=Schlafzimmer&gt;&lt;/KNX&gt;
+Löst den Hintergrundscan der Tabelle Schlafzimmer aus. Ein Hintergrundscan wird fix mit ca. 3 Telegramme/s ausgeführt.</p>
+<p>&lt;KNX&gt;&lt;SETVALUE=1/2/3,1&gt;&lt;/KNX&gt;
+Setzt den Wert der Gruppenadresse 1/2/3 auf 1</p>
+<p>&lt;KNX&gt;&lt;SETVALUE=1/2/3,1&gt;&lt;/KNX&gt;
+Setzt den Wert der Gruppenadresse 1/2/3 auf 1</p>
+<p>&lt;KNX&gt;&lt;SETVALUE=0/0/1,[TIME]&gt;&lt;/KNX&gt;
+Setzt den Wert der Gruppenadresse 0/0/1 auf die aktuelle Systemzeit. Die fixe Systemvariable [TIME] ist im exakten Format für die Verwendung im KNX System formatiert. Gleiches gilt für die Verwendung der fixen Systemvariable [DATE].</p>
+<p class="last">&lt;KNX&gt;&lt;GETVALUE=1/2/33&gt;&lt;/KNX&gt;
+Wertabfrage der Gruppenadresse 1/2/33</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5. <strong>KNXnet</strong></a><ul>
+<li><a class="reference internal" href="#knxnet-1">5.1. KNXnet/1</a></li>
+<li><a class="reference internal" href="#knxnet-2">5.2. KNXnet/2</a></li>
+<li><a class="reference internal" href="#knxnet-3">5.3. KNXnet/3</a></li>
+<li><a class="reference internal" href="#knxnet-4">5.4. KNXnet/4</a></li>
+<li><a class="reference internal" href="#knxnet-ip">5.5. KNXnet/IP</a><ul>
+<li><a class="reference internal" href="#knxnet-ip-1">5.5.1. KNXnet/IP/1</a></li>
+<li><a class="reference internal" href="#knxnet-ip-2">5.5.2. KNXnet/IP/2</a></li>
+<li><a class="reference internal" href="#knxnet-ip-routing">5.5.3. KNXnet/IP Routing</a><ul>
+<li><a class="reference internal" href="#knxnet-ip-routing-support">5.5.3.1. KNXnet/IP Routing-Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter_4.html"
+                        title="previous chapter">4. Kapitel 4</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/chapter_5.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter_4.html" title="4. Kapitel 4"
+             >previous</a> |</li>
+        <li><a href="index.html">nomos 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, nomos system AG.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
