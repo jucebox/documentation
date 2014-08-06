@@ -79,185 +79,364 @@
 <div class="line"><strong>Vorteil der Routing Variante:</strong></div>
 <div class="line">Es können beliebig viele nomos Systeme gleichzeitig auf das KNXnet/IP-Device gleichberechtigt zugreifen. Die Konfigurationsdatei heisst knx.csv und wird im misc-Ordner abgelegt. In der knx.csv angelegte Adressen werden konvertiert, ggf. Actions ausgeführt und über den Broadcast Port ausgegeben.</div>
 </div>
-<p><strong>Aufbau der Definitionstabelle:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre>Typ:    csv Datei
-Ort:    .\{projectPath}\misc\
-Name:   knx.csv
-Länge:  10000 Zeilen/Einträge
-Event:  BC, Status
-Export: nein
-Lizenz: ja
-
-Die knx.csv besteht aus 3 Sektionen:
-
-[CONFIG];
- allgemeine Konfiguration der Interface Parameter
-
-[DATAPOINTS];
- Definition von Datenpunkten, die über KNXnet/IP empfangen und ausgewertet werden sollen.
-
-[TABLE={NAME}];
- Scan Definitionstabellen, Gruppenpollen
-</pre></div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><strong>Aufbau der Definitionstabelle:</strong></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Typ:</td>
+<td>csv Datei</td>
+</tr>
+<tr class="row-even"><td>Ort:</td>
+<td>.{projectPath}misc</td>
+</tr>
+<tr class="row-odd"><td>Name:</td>
+<td>knx.csv</td>
+</tr>
+<tr class="row-even"><td>Länge:</td>
+<td>10000 Zeilen/Einträge</td>
+</tr>
+<tr class="row-odd"><td>Event:</td>
+<td>BC, Status</td>
+</tr>
+<tr class="row-even"><td>Export:</td>
+<td>nein</td>
+</tr>
+<tr class="row-odd"><td>Lizenz:</td>
+<td>ja</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">Die knx.csv besteht aus 3 Sektionen:</div>
+</div>
+<ul class="simple">
+<li>[CONFIG];                     allgemeine Konfiguration der Interface Parameter</li>
+<li>[DATAPOINTS];         Definition von Datenpunkten, die über KNXnet/IP empfangen und ausgewertet werden sollen.</li>
+<li>[TABLE={NAME}];       Scan Definitionstabellen, Gruppenpollen</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
 </div>
 <p><strong>Aufbau:</strong></p>
+<p>[CONFIG]; <strong>Sektion</strong></p>
 <blockquote>
-<div><p>[CONFIG]; <strong>Sektion</strong></p>
-<dl class="docutils">
+<div><ul>
+<li><dl class="first docutils">
 <dt>ACTIVE;YES;</dt>
-<dd><dl class="first last docutils">
-<dt>Schaltet den KNXnet/IP Support</dt>
-<dd>„YES“ = ein,
-„NO“ = aus</dd>
-</dl>
+<dd><div class="first last line-block">
+<div class="line">Schaltet den KNXnet/IP Support</div>
+<div class="line">„YES“ = ein,</div>
+<div class="line">„NO“ = aus</div>
+</div>
 </dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>DEBUG;YES;</dt>
-<dd><dl class="first last docutils">
-<dt>Schalter für</dt>
-<dd>„YES“ = erweiterte Logausgaben (Busmonitor)
-„NO“ = standard Logausgaben</dd>
-</dl>
+<dd><div class="first last line-block">
+<div class="line">Schalter für</div>
+<div class="line">„YES“ = erweiterte Logausgaben (Busmonitor)</div>
+<div class="line">„NO“ = standard Logausgaben</div>
+</div>
 </dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>ESF;{ESF File};</dt>
-<dd>Name der .esf-Datei in dem Ordner misc
-(knx.esf = Default)</dd>
+<dd><div class="first last line-block">
+<div class="line">Name der .esf-Datei in dem Ordner misc</div>
+<div class="line">(knx.esf = Default)</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>PHYSADDR;{Phys.Adresse};</dt>
-<dd>Lokale Physikalische Absenderadresse, die mmh beim Versenden verwenden soll.</dd>
+<dd><div class="first last line-block">
+<div class="line">Lokale Physikalische Absenderadresse, die mmh beim Versenden verwenden soll.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>ADDRTYPE;{Adresstyp};</dt>
-<dd>„2STEP“ = 2stufige Darstellung, „3STEP“ = 3stufige
-Darstellung (Default)</dd>
+<dd><div class="first last line-block">
+<div class="line">„2STEP“ = 2stufige Darstellung,</div>
+<div class="line">„3STEP“ = 3stufige Darstellung (Default)</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>DPTNAMES;YES;</dt>
-<dd><dl class="first last docutils">
-<dt>Schaltet die Namen der Datenpunkte im Broadcast</dt>
-<dd>„YES“ = ein (Default),
-„NO“ = aus</dd>
-</dl>
+<dd><div class="first last line-block">
+<div class="line">Schaltet die Namen der Datenpunkte im Broadcast</div>
+<div class="line">„YES“ = ein (Default),</div>
+<div class="line">„NO“ = aus</div>
+</div>
 </dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>MATCHLOCAL;YES;</dt>
-<dd><dl class="first last docutils">
-<dt>Legt fest, ob die unter DATAPOINTS definierten Aktionen auch dann ausgeführt werden, wenn der Deamon selbst auf die Datenpunkte schreibt.</dt>
-<dd>„YES“ = ein,
-„NO“ = aus (Default)</dd>
-</dl>
+<dd><div class="first last line-block">
+<div class="line">Legt fest, ob die unter DATAPOINTS definierten Aktionen auch dann ausgeführt werden, wenn der Deamon selbst auf die Datenpunkte schreibt.</div>
+<div class="line">„YES“ = ein,</div>
+<div class="line">„NO“ = aus (Default)</div>
+</div>
 </dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>INITSCAN;YES;</dt>
-<dd><dl class="first last docutils">
-<dt>scannt die definierten Tabellen beim Engine-Start</dt>
-<dd>„YES/ALL“ = ein,
-„NO“ = aus (Default)</dd>
-</dl>
+<dd><div class="first last line-block">
+<div class="line">scannt die definierten Tabellen beim Engine-Start</div>
+<div class="line">„YES/ALL“ = ein,</div>
+<div class="line">„NO“ = aus (Default)</div>
+</div>
 </dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>SENDRATE;{Telegr/s};</dt>
-<dd>Begrenzt die Anzahl der Telegramme die pro Sekunde auf den Bus beschrieben werden. Der Puffer ist variabel und Burst fähig. „17“ (Default). Der hier eingestellte Wert gilt auch für den Abstand der Telegrammabfragen, die mit SCAN= initiert werden.</dd>
+<dd><div class="first last line-block">
+<div class="line">Begrenzt die Anzahl der Telegramme die pro Sekunde auf den Bus beschrieben werden. Der Puffer ist variabel und Burst fähig. „17“ (Default). Der hier eingestellte Wert gilt auch für den Abstand der Telegrammabfragen, die mit SCAN= initiert werden.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
 <dt>CONNECTIONTYPE;{Protokolltyp};</dt>
-<dd>„ROUTING“ (default: ROUTING)
-oder „TUNNELING“
-oder“ TUNNELING_BRIDGE“</dd>
-</dl>
-</div></blockquote>
-<p><strong>Spezifische Einstellungen für die Betriebsart „ROUTING“:</strong></p>
-<p>CONNECTIONTYPE;ROUTING;</p>
-<p><strong>Bei</strong> CONNECTIONTYPE;ROUTING <strong>wird folgender, zusätzlicher Schalter benötigt:</strong></p>
-<dl class="docutils">
-<dt>MULTICAST_IP;{Multicast ADR};</dt>
-<dd>Multicast IP des Gerätes Standard:
-{224.0.23.12} oder „AUTO“ für automatisches Suchen
-(Default: AUTO)</dd>
-</dl>
-<p>[DATAPOINTS]; <strong>Sektion</strong></p>
-<p>{KNX/EIB Gruppenadresse};{Bedingung};{mmh-Sequenz};</p>
-<blockquote>
-<div>In diesem Bereich können KNX Events direkt ausgewertet und entsprechende Aktionen eingeleitet werden.</div></blockquote>
-<p><strong>Erläuterungen:</strong></p>
-<p>{KNX/EIB Gruppenadresse} Gruppenandresse im entsprechend eingestelltem ADDRTYPE</p>
-<p>{Bedingung}     kann (entsprechend BAOS) folgende Zustände haben:</p>
-<dl class="docutils">
-<dt>{Match-String}</dt>
-<dd>der von KNX/IP übermittelte Wert muß mit</dd>
-<dt>{Match-String}</dt>
-<dd>übereinstimmen.</dd>
-</dl>
-<p>{#}     alle Werte starten das Script bzw. die Sequenz. Wenn <em>{Bedingung}</em> leer ist, wird &#8216;#&#8217; angenommen.</p>
-<dl class="docutils">
-<dt>{mmh-Sequenz}</dt>
-<dd>Auszuführende Kommandosequenz oder Scriptname, wenn <em>Bedingung</em> erfüllt. Kann als Platzhalter für den Wert &#8216;#&#8217;        beinhalten, bei Scripten wird der empfangene Wert als   Argument übergeben</dd>
-<dt>[TABLE={NAME}]; <strong>Sektion</strong> {NAME} definiert eine entsprechende Gruppe.</dt>
-<dd>Es können beliebig viele [TABLE={name}] Sektionen angelegt werden.
-Diese Namen werden bei der Ausführung der SCAN Befehle benötigt und im weiterem Verlauf genauer erklärt.</dd>
-<dt>{KNX/EIB Gruppenadresse};</dt>
-<dd>Gruppenadressen die gescannt werden soll. Es darf nur eine Gruppenadresse je Zeile eingetragen werden.</dd>
-</dl>
-<p><strong>Beispiele für die Definitionen [DATAPOINTS] Sektion:</strong></p>
-<blockquote>
-<div><p>8/1/4;1;&lt;ITUNES&gt;&lt;NEXT&gt;&lt;PLAY&gt;&lt;/ITUNES&gt;
-Bei Empfang der Adresse 8/1/4 mit dem Wert „1“ führt iTunes den internen Befehl „NEXT“ und PLAY aus.</p>
-<p>Pro Adresse lassen sich mehrere Actions definieren, wenn unterschiedliche Match-Bedingungen angegeben werden. Bei identischen Match-Bedingungen pro Adresse wird nur die erste gefundene Action ausgeführt.</p>
-<dl class="docutils">
-<dt>15/7/10;1;&lt;SYS&gt;&lt;SAY=on&gt;&lt;/SYS&gt; oder 15/7/10;0;&lt;SYS&gt;&lt;SAY=off&gt;&lt;/SYS&gt;</dt>
-<dd><dl class="first last docutils">
-<dt>Führt nur bei Empfang einer logischen „1“ der Adresse 15/7/10 den Befehl</dt>
-<dd>&lt;SYS&gt;&lt;SAY=on&gt;&lt;/SYS&gt; aus. Bei empfang einer logischen „0“ wird nur der Befehl
-&lt;SYS&gt;&lt;SAY=off&gt;&lt;/SYS&gt; ausgeführt.</dd>
+<dd><div class="first line-block">
+<div class="line">„ROUTING“ (default: ROUTING)</div>
+<div class="line">oder „TUNNELING“</div>
+<div class="line">oder“ TUNNELING_BRIDGE“</div>
+</div>
+<dl class="last docutils">
+<dt><strong>Spezifische Einstellungen für die Betriebsart „ROUTING“:</strong></dt>
+<dd><div class="first last line-block">
+<div class="line">CONNECTIONTYPE;ROUTING;</div>
+<div class="line"><strong>Bei</strong> CONNECTIONTYPE;ROUTING <strong>wird folgender, zusätzlicher Schalter benötigt:</strong></div>
+<div class="line">MULTICAST_IP;{Multicast ADR};</div>
+<div class="line">Multicast IP des Gerätes Standard: {224.0.23.12} oder „AUTO“ für automatisches Suchen</div>
+<div class="line">(Default: AUTO)</div>
+</div>
+</dd>
 </dl>
 </dd>
-<dt>8/1/7;#;&lt;SYS&gt;&lt;VOLSET=#&gt;&lt;/SYS&gt;;</dt>
-<dd>Schreibt den empfangenen Wert auf die System Volume.</dd>
 </dl>
-<p>5/2/8;DOWN,100;&lt;SYS&gt;&lt;VOLDN=5&gt;&lt;/SYS&gt;;
-5/2/8;UP,100;&lt;SYS&gt;&lt;VOLUP=5&gt;&lt;/SYS&gt;;</p>
-<blockquote>
-<div>Empfängt und wertet ein 4Bit Dimmtelegramm (EIS2) aus.
-Hierbei empfiehlt es sich, dass entsprechende KNX Telegramm zyklisch senden zu lassen
-(Einstellung am entspr. Sensor beachten), da der entsprechend auszuführende Befehl {mmh-Sequenz} nur je empfangenem  Telegramm angetriggert wird.</div></blockquote>
+</li>
+</ul>
 </div></blockquote>
-<p><strong>Beispiele für den Scan Support:</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>[DATAPOINTS]; <strong>Sektion</strong></p>
 <blockquote>
-<div><p>[TABLE=Wohnzimmer];
+<div><ul class="simple">
+<li>{KNX/EIB Gruppenadresse};{Bedingung};{mmh-Sequenz};</li>
+</ul>
+<blockquote>
+<div><div class="line-block">
+<div class="line">In diesem Bereich können KNX Events direkt ausgewertet und entsprechende Aktionen eingeleitet werden.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Erläuterungen:</strong></div>
+</div>
+<div class="line-block">
+<div class="line">{KNX/EIB Gruppenadresse} Gruppenandresse im entsprechend eingestelltem ADDRTYPE</div>
+<div class="line">{Bedingung} kann (entsprechend BAOS) folgende Zustände haben:</div>
+</div>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>{Match-String}</dt>
+<dd><div class="first last line-block">
+<div class="line">der von KNX/IP übermittelte Wert muß mit {Match-String} übereinstimmen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>{#}</dt>
+<dd><div class="first last line-block">
+<div class="line">alle Werte starten das Script bzw. die Sequenz. Wenn <em>{Bedingung}</em> leer ist, wird &#8216;#&#8217; angenommen.</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>{mmh-Sequenz}</dt>
+<dd><div class="first last line-block">
+<div class="line">Auszuführende Kommandosequenz oder Scriptname, wenn <em>Bedingung</em> erfüllt. Kann als Platzhalter für den Wert &#8216;#&#8217;       beinhalten, bei Scripten wird der empfangene Wert als   Argument übergeben</div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<dl class="docutils">
+<dt>[TABLE={NAME}]; <strong>Sektion</strong> {NAME}</dt>
+<dd><p class="first">definiert eine entsprechende Gruppe.
+Es können beliebig viele [TABLE={name}] Sektionen angelegt werden.
+Diese Namen werden bei der Ausführung der SCAN Befehle benötigt und im weiterem Verlauf genauer erklärt.</p>
+<ul class="last">
+<li><dl class="first docutils">
+<dt>{KNX/EIB Gruppenadresse};</dt>
+<dd><div class="first last line-block">
+<div class="line">Gruppenadressen die gescannt werden soll. Es darf nur eine Gruppenadresse je Zeile eingetragen werden.</div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Beispiele für die Definitionen [DATAPOINTS] Sektion:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>8/1/4;1;&lt;ITUNES&gt;&lt;NEXT&gt;&lt;PLAY&gt;&lt;/ITUNES&gt;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Bei Empfang der Adresse 8/1/4 mit dem Wert „1“ führt iTunes den internen Befehl „NEXT“ und PLAY aus.</div>
+<div class="line">Pro Adresse lassen sich mehrere Actions definieren, wenn unterschiedliche Match-Bedingungen angegeben werden. Bei identischen Match-Bedingungen pro Adresse wird nur die erste gefundene Action ausgeführt.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>15/7/10;1;&lt;SYS&gt;&lt;SAY=on&gt;&lt;/SYS&gt; oder 15/7/10;0;&lt;SYS&gt;&lt;SAY=off&gt;&lt;/SYS&gt;
+</pre></div>
+</div>
+<p>Führt nur bei Empfang einer logischen „1“ der Adresse 15/7/10 den Befehl</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;SYS&gt;&lt;SAY=on&gt;&lt;/SYS&gt;
+</pre></div>
+</div>
+<p>aus.</p>
+<p>Bei Empfang einer logischen „0“ wird nur der Befehl</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;SYS&gt;&lt;SAY=off&gt;&lt;/SYS&gt;
+</pre></div>
+</div>
+<p>ausgeführt.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">8</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">7</span><span class="p">;</span><span class="c">#;&lt;SYS&gt;&lt;VOLSET=\#&gt;&lt;/SYS&gt;;</span>
+</pre></div>
+</div>
+<p>Schreibt den empfangenen Wert auf die System Volume.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>5/2/8;DOWN,100;&lt;SYS&gt;&lt;VOLDN=5&gt;&lt;/SYS&gt;;
+5/2/8;UP,100;&lt;SYS&gt;&lt;VOLUP=5&gt;&lt;/SYS&gt;;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Empfängt und wertet ein 4Bit Dimmtelegramm (EIS2) aus.</div>
+<div class="line">Hierbei empfiehlt es sich, dass entsprechende KNX Telegramm zyklisch senden zu lassen</div>
+<div class="line">(Einstellung am entspr. Sensor beachten), da der entsprechend auszuführende Befehl {mmh-Sequenz} nur je empfangenem  Telegramm angetriggert wird.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p><strong>Beispiele für den Scan Support:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>[TABLE=Wohnzimmer];
 1/8/4
 1/8/5
 1/8/7
-1/4/3</p>
-<p>[TABLE=Schlafzimmer];
+1/4/3
+
+[TABLE=Schlafzimmer];
 1/4/3
 1/3/5
-1/2/7</p>
-<p>Definiert zwei Scan Tabellen, die unter Verwendung der SCAN Befehle abgerufen werden können. Der SCAN kann unmittelbar erfolgen, oder aber im Hintergrund ablaufen. Bitte beachten, dass ein SCAN nur funktionieren kann, wenn auch entsprechend das „l“ Flag des assoziierenden KNX Kommunikationsobjekt gesetzt ist. Je Adresse sollte dieses Flag nur einmalig an einem Kommunikationsobjekt gesetzt sein.</p>
-</div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre>Die Unterscheidung in den beiden verschiedenen SCAN Methoden liegt im zeitlichen Abstand der Lese- anforderungen. Mit SCAN= können schnelle Abfragen generiert werden. Hier sollte jedoch beachtet werden, dass nicht zu viele Telegramme mit dieser Geschwindigkeit abgefragt werden. Für die störungsfreie Abfrage vieler Telegramme, wie zb für einen initial Scan, ist der BACKGROUNDSCAN= vorgesehen.
-
-Die Telegramme werden sequentiell nach Erhalt einer Antwort ausgeführt. Auf eine Antwort wird max. 1s gewartet. Wird innerhalb dieser Zeit keine Antwort empfangen, wir die Meldung ERR_NO_RESPONSE generiert. Die Antworten des Scan‘s erscheinen ebenfalls im Broadcast (BC):
-
-       bc: &lt;KNX&gt;&lt;15/2/181-Geli.DimBelLlp.ein/ausStatus=0&gt;&lt;/KNX&gt;
-       bc: &lt;KNX&gt;&lt;15/5/28-SOLL_TEMP_Serverschrank=27.00&gt;&lt;/KNX&gt;
-       bc: &lt;KNX&gt;&lt;15/2/21- mike.DimBelLlp.ein/ausStatus=0&gt;&lt;/KNX&gt;
+1/2/7
 </pre></div>
 </div>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div>Definiert zwei Scan Tabellen, die unter Verwendung der SCAN Befehle abgerufen werden können. Der SCAN kann unmittelbar erfolgen, oder aber im Hintergrund ablaufen. Bitte beachten, dass ein SCAN nur funktionieren kann, wenn auch entsprechend das „l“ Flag des assoziierenden KNX Kommunikationsobjekt gesetzt ist. Je Adresse sollte dieses Flag nur einmalig an einem Kommunikationsobjekt gesetzt sein.</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Die Unterscheidung in den beiden verschiedenen SCAN Methoden liegt im zeitlichen Abstand der Lese- anforderungen. Mit SCAN= können schnelle Abfragen generiert werden. Hier sollte jedoch beachtet werden, dass nicht zu viele Telegramme mit dieser Geschwindigkeit abgefragt werden. Für die störungsfreie Abfrage vieler Telegramme, wie zb für einen initial Scan, ist der BACKGROUNDSCAN= vorgesehen.</p>
+<p><strong>Die Telegramme werden sequentiell nach Erhalt einer Antwort ausgeführt. Auf eine Antwort wird max. 1s gewartet. Wird innerhalb dieser Zeit keine Antwort empfangen, wir die Meldung ERR_NO_RESPONSE generiert. Die Antworten des Scan‘s erscheinen ebenfalls im Broadcast (BC):</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>bc: &lt;KNX&gt;&lt;15/2/181-Geli.DimBelLlp.ein/ausStatus=0&gt;&lt;/KNX&gt;
+bc: &lt;KNX&gt;&lt;15/5/28-SOLL_TEMP_Serverschrank=27.00&gt;&lt;/KNX&gt;
+bc: &lt;KNX&gt;&lt;15/2/21- mike.DimBelLlp.ein/ausStatus=0&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p><strong>Es existiert eine Befehlsklasse KNX mit folgenden Befehlen:</strong></p>
-<dl class="docutils">
-<dt>SETVALUE={KNX-Adresse},{Wert}</dt>
-<dd>Beschreibt eine KNX Gruppenadresse (muss in der .esf Datei definiert sein) mit einem Wert.</dd>
-<dt>GETVALUE={KNX-Adresse}</dt>
-<dd>Liest den aktuellen Wert einer KNX Gruppenadresse (muss in der .esf Datei definiert sein).</dd>
-<dt>SCAN={Name}</dt>
-<dd>Sendet an alle Adressen in der entsprechenden Tabelle einen KNX-Read-Befehl, sodass man mit einem Befehl ein komplettes Prozessabbild bekommen kann. Der Abstand der Abfragen kann mittels SENDRATE;x manipuliert werden.</dd>
-<dt>BACKGROUNDSCAN={Name}</dt>
-<dd><p class="first">Wie vor, führt jedoch einen reduzierten Scan im Hintergrund aus. Abstand der Telegramme = 300ms</p>
-<p><strong>Beispiele:</strong></p>
-<p>&lt;KNX&gt;&lt;SCAN=Wohnzimmer&gt;&lt;/KNX&gt;
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>SETVALUE={KNX-Adresse},{Wert}</td>
+<td>Beschreibt eine KNX Gruppenadresse (muss in der .esf Datei definiert sein) mit einem Wert.</td>
+</tr>
+<tr class="row-even"><td>GETVALUE={KNX-Adresse}</td>
+<td>Liest den aktuellen Wert einer KNX Gruppenadresse (muss in der .esf Datei definiert sein).</td>
+</tr>
+<tr class="row-odd"><td>SCAN={Name}</td>
+<td>Sendet an alle Adressen in der entsprechenden Tabelle einen KNX-Read-Befehl, sodass man mit einem Befehl ein komplettes Prozessabbild bekommen kann. Der Abstand der Abfragen kann mittels SENDRATE;x manipuliert werden.</td>
+</tr>
+<tr class="row-even"><td>BACKGROUNDSCAN={Name}</td>
+<td>Wie vor, führt jedoch einen reduzierten Scan im Hintergrund aus. Abstand der Telegramme = 300ms</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p><strong>Beispiele:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;KNX&gt;&lt;SCAN=Wohnzimmer&gt;&lt;/KNX&gt;
 &lt;KNX&gt;&lt;SCAN=Wohnzimmer&gt;&lt;SCAN=Schlafzimmer&gt;&lt;/KNX&gt;
-Löst die Abfrage der Gruppenadressen, wie z.B. unter [TABLE=Schlafzimmer] definiert aus. Es können auch mehre Tabellen gleichzeitig abgefragt werden.</p>
-<p>&lt;KNX&gt;&lt;BACKGROUNDSCAN=Schlafzimmer&gt;&lt;/KNX&gt;
-Löst den Hintergrundscan der Tabelle Schlafzimmer aus. Ein Hintergrundscan wird fix mit ca. 3 Telegramme/s ausgeführt.</p>
-<p>&lt;KNX&gt;&lt;SETVALUE=1/2/3,1&gt;&lt;/KNX&gt;
-Setzt den Wert der Gruppenadresse 1/2/3 auf 1</p>
-<p>&lt;KNX&gt;&lt;SETVALUE=1/2/3,1&gt;&lt;/KNX&gt;
-Setzt den Wert der Gruppenadresse 1/2/3 auf 1</p>
-<p>&lt;KNX&gt;&lt;SETVALUE=0/0/1,[TIME]&gt;&lt;/KNX&gt;
-Setzt den Wert der Gruppenadresse 0/0/1 auf die aktuelle Systemzeit. Die fixe Systemvariable [TIME] ist im exakten Format für die Verwendung im KNX System formatiert. Gleiches gilt für die Verwendung der fixen Systemvariable [DATE].</p>
-<p class="last">&lt;KNX&gt;&lt;GETVALUE=1/2/33&gt;&lt;/KNX&gt;
-Wertabfrage der Gruppenadresse 1/2/33</p>
-</dd>
-</dl>
+</pre></div>
+</div>
+<p>Löst die Abfrage der Gruppenadressen, wie z.B. unter [TABLE=Schlafzimmer] definiert aus. Es können auch mehre Tabellen gleichzeitig abgefragt werden.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;KNX&gt;&lt;BACKGROUNDSCAN=Schlafzimmer&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<p>Löst den Hintergrundscan der Tabelle Schlafzimmer aus. Ein Hintergrundscan wird fix mit ca. 3 Telegramme/s ausgeführt.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;KNX&gt;&lt;SETVALUE=1/2/3,1&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<p>Setzt den Wert der Gruppenadresse 1/2/3 auf 1</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;KNX&gt;&lt;SETVALUE=1/2/3,1&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<p>Setzt den Wert der Gruppenadresse 1/2/3 auf 1</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;KNX&gt;&lt;SETVALUE=0/0/1,[TIME]&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<p>Setzt den Wert der Gruppenadresse 0/0/1 auf die aktuelle Systemzeit. Die fixe Systemvariable [TIME] ist im exakten Format für die Verwendung im KNX System formatiert. Gleiches gilt für die Verwendung der fixen Systemvariable [DATE].</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;KNX&gt;&lt;GETVALUE=1/2/33&gt;&lt;/KNX&gt;
+</pre></div>
+</div>
+<p>Wertabfrage der Gruppenadresse 1/2/33</p>
+</div></blockquote>
 </div>
 </div>
 </div>
