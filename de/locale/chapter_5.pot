@@ -1,0 +1,445 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, nomos
+# This file is distributed under the same license as the documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: documentation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-07 11:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../chapter_5.rst:2
+# 44dbe24e705745e9ad4d23a03df6d872
+msgid "**KNXnet**"
+msgstr ""
+
+#: ../../chapter_5.rst:5
+# b2e97cf7561f4abca6f80dc68eb12776
+msgid "KNXnet/1"
+msgstr ""
+
+#: ../../chapter_5.rst:8
+# daa1ec6ee5f24d90942dede81dd266ea
+msgid "KNXnet/2"
+msgstr ""
+
+#: ../../chapter_5.rst:11
+# 5107c1c4701d4393b3a7651453509436
+msgid "KNXnet/3"
+msgstr ""
+
+#: ../../chapter_5.rst:14
+# beeb7ea2c13947b0866bf24955467d08
+msgid "KNXnet/4"
+msgstr ""
+
+#: ../../chapter_5.rst:17
+# 91ec4231a12348f9b8dc143a37c92497
+msgid "KNXnet/IP"
+msgstr ""
+
+#: ../../chapter_5.rst:19
+# c02ed1789ea74de7a89cc52dbb8520ef
+msgid "KNXnet/IP/1"
+msgstr ""
+
+#: ../../chapter_5.rst:21
+# 169605694afb4fc28a6d5ad3845a855a
+msgid "KNXnet/IP/2"
+msgstr ""
+
+#: ../../chapter_5.rst:23
+# 83e965f1caa44860aa18d765f6247cd4
+msgid "KNXnet/IP Routing"
+msgstr ""
+
+#: ../../chapter_5.rst:25
+# f41085bddcf64ff28fc7e3854a76cd7c
+msgid "KNXnet/IP Routing-Support"
+msgstr ""
+
+#: ../../chapter_5.rst:27
+# 90b7401ebc934cb593fae33014d74e3d
+msgid "Testtext für die Übersetzung"
+msgstr ""
+
+#: ../../chapter_5.rst:29
+# e8fa0fcf105646aab39a93f655e84454
+msgid "**Allgemeines:**"
+msgstr ""
+
+#: ../../chapter_5.rst:30
+# 73248e1edec3443a84d278e27136fa5d
+msgid "Beim Start wird automatisch ein KNX/IP routingfähiger IP-Router gesucht und gegebenenfalls im Log angezeigt. nomos liest die Mutlicast-Adresse des IP-Routers aus und tritt der entsprechenden Gruppe bei."
+msgstr ""
+
+#: ../../chapter_5.rst:32
+# 5b66fbf1f5c04ee8964f55a56a4b68b6
+msgid "**Vorteil der Routing Variante:**"
+msgstr ""
+
+#: ../../chapter_5.rst:33
+# e40365f8b4c8468fa150e088a2ad1cd1
+msgid "Es können beliebig viele nomos Systeme gleichzeitig auf das KNXnet/IP-Device gleichberechtigt zugreifen. Die Konfigurationsdatei heisst knx.csv und wird im misc-Ordner abgelegt. In der knx.csv angelegte Adressen werden konvertiert, ggf. Actions ausgeführt und über den Broadcast Port ausgegeben."
+msgstr ""
+
+#: ../../chapter_5.rst:36
+# 022d7bf46f0643b09471974284f774e4
+msgid "**Aufbau der Definitionstabelle:**"
+msgstr ""
+
+#: ../../chapter_5.rst:39
+# 41b1746d80fc41458dbc918f6a17020d
+msgid "Typ:"
+msgstr ""
+
+#: ../../chapter_5.rst:39
+# a4eb78a2c1434529ae6cb48cb0d20a0e
+msgid "csv Datei"
+msgstr ""
+
+#: ../../chapter_5.rst:40
+# e1b614a3abdc4742838723de035b1303
+msgid "Ort:"
+msgstr ""
+
+#: ../../chapter_5.rst:40
+# 6cad8733f4d04252b1e22394ed34683c
+msgid ".\\{projectPath}\\misc\\"
+msgstr ""
+
+#: ../../chapter_5.rst:41
+# 7168f440475b455d9f36a9bf22cd93c9
+msgid "Name:"
+msgstr ""
+
+#: ../../chapter_5.rst:41
+# 5f5f2153f5244c3b994277a3e0ed89bc
+msgid "knx.csv"
+msgstr ""
+
+#: ../../chapter_5.rst:42
+# 763025eb75204cd0901e46ad1e759af2
+msgid "Länge:"
+msgstr ""
+
+#: ../../chapter_5.rst:42
+# 2c51295a0df2406f8e5bb4e7be7abcbe
+msgid "10000 Zeilen/Einträge"
+msgstr ""
+
+#: ../../chapter_5.rst:43
+# 2ae5c882c151491bb6827ffcd4e71717
+msgid "Event:"
+msgstr ""
+
+#: ../../chapter_5.rst:43
+# 066f78f18a074327be85d68f34d69aee
+msgid "BC, Status"
+msgstr ""
+
+#: ../../chapter_5.rst:44
+# 7728cf1d93e74906908fe7bdb76ff28e
+msgid "Export:"
+msgstr ""
+
+#: ../../chapter_5.rst:44
+# c641fa3fa387419ab60bb1d305d2cbe0
+msgid "nein"
+msgstr ""
+
+#: ../../chapter_5.rst:45
+# 10e1508b54e64a5692025e0fdad06d18
+msgid "Lizenz:"
+msgstr ""
+
+#: ../../chapter_5.rst:45
+# 2113b1df40b44a178cf533d51432f70d
+msgid "ja"
+msgstr ""
+
+#: ../../chapter_5.rst:48
+# 8ec61907737e44e9b6ee7477b7a702f3
+msgid "Die knx.csv besteht aus 3 Sektionen:"
+msgstr ""
+
+#: ../../chapter_5.rst:50
+# 50ef2ea7b72c4f1884c3b07260eb3503
+msgid "[CONFIG];                    allgemeine Konfiguration der Interface Parameter"
+msgstr ""
+
+#: ../../chapter_5.rst:51
+# b0f1cf6b62394d34b1ec45955064e262
+msgid "[DATAPOINTS];                Definition von Datenpunkten, die über KNXnet/IP empfangen und ausgewertet werden sollen."
+msgstr ""
+
+#: ../../chapter_5.rst:52
+# 614c66d04b244659b1342cb12f1f3854
+msgid "[TABLE={NAME}];      Scan Definitionstabellen, Gruppenpollen"
+msgstr ""
+
+#: ../../chapter_5.rst:56
+# 3cc34c1b595c4a638754f5ee09b501f4
+msgid "**Aufbau:**"
+msgstr ""
+
+#: ../../chapter_5.rst:58
+# 109a83aa9a04429d80c2192b34506ba6
+msgid "[CONFIG]; **Sektion**"
+msgstr ""
+
+#: ../../chapter_5.rst:62
+# c4166b3899434f8684b89f20d6353689
+msgid "ACTIVE;YES;"
+msgstr ""
+
+#: ../../chapter_5.rst:67
+# 988856e97e2c4969bce704d4f30e63f7
+msgid "DEBUG;YES;"
+msgstr ""
+
+#: ../../chapter_5.rst:71
+# 0d0e467a15484041b7adbc2300c544fb
+msgid "ESF;{ESF File};"
+msgstr ""
+
+#: ../../chapter_5.rst:74
+# e810fb7026da4473a783c6a411f84c0d
+msgid "PHYSADDR;{Phys.Adresse};"
+msgstr ""
+
+#: ../../chapter_5.rst:78
+# b35d3fee58d44d65b2f1d5be67f04210
+msgid "ADDRTYPE;{Adresstyp};"
+msgstr ""
+
+#: ../../chapter_5.rst:83
+# 9037def03b074ad5a257a99128fa20ac
+msgid "DPTNAMES;YES;"
+msgstr ""
+
+#: ../../chapter_5.rst:88
+# 79bb7302c13e4a7cbd7461c8f6337ee6
+msgid "MATCHLOCAL;YES;"
+msgstr ""
+
+#: ../../chapter_5.rst:93
+# 5608637da4f44769b55f7ea626522ea5
+msgid "INITSCAN;YES;"
+msgstr ""
+
+#: ../../chapter_5.rst:96
+# 0a49477a60e441f48069e533eaf63951
+msgid "SENDRATE;{Telegr/s};"
+msgstr ""
+
+#: ../../chapter_5.rst:108
+# 52767a1158e947788447f3f67a9207ee
+msgid "CONNECTIONTYPE;{Protokolltyp};"
+msgstr ""
+
+#: ../../chapter_5.rst:108
+# e0500a6afefd4c46bfe01e7f0eba78e7
+msgid "**Spezifische Einstellungen für die Betriebsart „ROUTING“:**"
+msgstr ""
+
+#: ../../chapter_5.rst:113
+# 87cb250130f44269812aa9c0e4413732
+msgid "[DATAPOINTS]; **Sektion**"
+msgstr ""
+
+#: ../../chapter_5.rst:115
+# 44c701ee3df44b8a92d51c2b92f42683
+msgid "{KNX/EIB Gruppenadresse};{Bedingung};{mmh-Sequenz};"
+msgstr ""
+
+#: ../../chapter_5.rst:124
+# 5599b24f84c944b8a91b60399cf19186
+msgid "{Match-String}"
+msgstr ""
+
+#: ../../chapter_5.rst:127
+# 2726c8dafaa44487931ee31f8f628452
+msgid "{#}"
+msgstr ""
+
+#: ../../chapter_5.rst:130
+# 2f14c52820024433a28e76638b2a4499
+msgid "{mmh-Sequenz}"
+msgstr ""
+
+#: ../../chapter_5.rst:140
+# ab05d8b8ef3148cabb799a459b27cbb9
+msgid "[TABLE={NAME}]; **Sektion** {NAME}"
+msgstr ""
+
+#: ../../chapter_5.rst:136
+# a9657584d4214cf0884ec5960215aa17
+msgid "definiert eine entsprechende Gruppe. Es können beliebig viele [TABLE={name}] Sektionen angelegt werden. Diese Namen werden bei der Ausführung der SCAN Befehle benötigt und im weiterem Verlauf genauer erklärt."
+msgstr ""
+
+#: ../../chapter_5.rst:140
+# a65172ee1a304956a7e1cdc336b19da6
+msgid "{KNX/EIB Gruppenadresse};"
+msgstr ""
+
+#: ../../chapter_5.rst:145
+# 69187865d9ac45ee94c243485ff108f0
+msgid "**Beispiele für die Definitionen [DATAPOINTS] Sektion:**"
+msgstr ""
+
+#: ../../chapter_5.rst:151
+# 12bb75a4e3da436e9c00d6960594e6c8
+msgid "Bei Empfang der Adresse 8/1/4 mit dem Wert „1“ führt iTunes den internen Befehl „NEXT“ und PLAY aus."
+msgstr ""
+
+#: ../../chapter_5.rst:152
+# 5b2aebabebb547d097e275f2edf4e540
+msgid "Pro Adresse lassen sich mehrere Actions definieren, wenn unterschiedliche Match-Bedingungen angegeben werden. Bei identischen Match-Bedingungen pro Adresse wird nur die erste gefundene Action ausgeführt."
+msgstr ""
+
+#: ../../chapter_5.rst:160
+# d67b28908b08459d8a787701d7ca391f
+msgid "Führt nur bei Empfang einer logischen „1“ der Adresse 15/7/10 den Befehl ::"
+msgstr ""
+
+#: ../../chapter_5.rst:164
+# 5e5417fd2eb648e2ba04abd8ba1ae101
+msgid "aus."
+msgstr ""
+
+#: ../../chapter_5.rst:166
+# be87ccd8a6464a56a96d0b826cd3f27b
+msgid "Bei Empfang einer logischen „0“ wird nur der Befehl ::"
+msgstr ""
+
+#: ../../chapter_5.rst:170
+# cc37d3862f14462b9e2a094174eeef2e
+msgid "ausgeführt."
+msgstr ""
+
+#: ../../chapter_5.rst:178
+# 8a9f221635194a94baf8f6d0c130c54f
+msgid "Schreibt den empfangenen Wert auf die System Volume."
+msgstr ""
+
+#: ../../chapter_5.rst:187
+# a0e74802e852463ab0e2c7f96246a9be
+msgid "Empfängt und wertet ein 4Bit Dimmtelegramm (EIS2) aus."
+msgstr ""
+
+#: ../../chapter_5.rst:188
+# c1ab6ffc17544b4b9c40b23c7c146d34
+msgid "Hierbei empfiehlt es sich, dass entsprechende KNX Telegramm zyklisch senden zu lassen"
+msgstr ""
+
+#: ../../chapter_5.rst:189
+# 1b99453314104e328db2e5b25c8a20c8
+msgid "(Einstellung am entspr. Sensor beachten), da der entsprechend auszuführende Befehl {mmh-Sequenz} nur je empfangenem  Telegramm angetriggert wird."
+msgstr ""
+
+#: ../../chapter_5.rst:193
+# 77538e9966014e4f8919e10b8a533bdb
+msgid "**Beispiele für den Scan Support:** ::"
+msgstr ""
+
+#: ../../chapter_5.rst:208
+# d790e77697104656bba1d84019efe572
+msgid "Definiert zwei Scan Tabellen, die unter Verwendung der SCAN Befehle abgerufen werden können. Der SCAN kann unmittelbar erfolgen, oder aber im Hintergrund ablaufen. Bitte beachten, dass ein SCAN nur funktionieren kann, wenn auch entsprechend das „l“ Flag des assoziierenden KNX Kommunikationsobjekt gesetzt ist. Je Adresse sollte dieses Flag nur einmalig an einem Kommunikationsobjekt gesetzt sein."
+msgstr ""
+
+#: ../../chapter_5.rst:212
+# aba646e59e8941bb9e6ad864e22a9da6
+msgid "Die Unterscheidung in den beiden verschiedenen SCAN Methoden liegt im zeitlichen Abstand der Lese- anforderungen. Mit SCAN= können schnelle Abfragen generiert werden. Hier sollte jedoch beachtet werden, dass nicht zu viele Telegramme mit dieser Geschwindigkeit abgefragt werden. Für die störungsfreie Abfrage vieler Telegramme, wie zb für einen initial Scan, ist der BACKGROUNDSCAN= vorgesehen."
+msgstr ""
+
+#: ../../chapter_5.rst:214
+# 4f88eea4f403426381f83a99739f9c02
+msgid "**Die Telegramme werden sequentiell nach Erhalt einer Antwort ausgeführt. Auf eine Antwort wird max. 1s gewartet. Wird innerhalb dieser Zeit keine Antwort empfangen, wir die Meldung ERR_NO_RESPONSE generiert. Die Antworten des Scan‘s erscheinen ebenfalls im Broadcast (BC):**"
+msgstr ""
+
+#: ../../chapter_5.rst:224
+# 41f78bf2b80147f796f88a0469fd6613
+msgid "**Es existiert eine Befehlsklasse KNX mit folgenden Befehlen:**"
+msgstr ""
+
+#: ../../chapter_5.rst:227
+# 593f4c9711114852b3cd11f81bd2f0f2
+msgid "SETVALUE={KNX-Adresse},{Wert}"
+msgstr ""
+
+#: ../../chapter_5.rst:227
+# aa0dac8955354c0599c14ff9a8f4bb26
+msgid "Beschreibt eine KNX Gruppenadresse (muss in der .esf Datei definiert sein) mit einem Wert."
+msgstr ""
+
+#: ../../chapter_5.rst:228
+# 006a71fe233c494a96de242e23826a8a
+msgid "GETVALUE={KNX-Adresse}"
+msgstr ""
+
+#: ../../chapter_5.rst:228
+# 8862edc2da2d4b668f2408f1776a934b
+msgid "Liest den aktuellen Wert einer KNX Gruppenadresse (muss in der .esf Datei definiert sein)."
+msgstr ""
+
+#: ../../chapter_5.rst:229
+# c878a3e2b73a43e99463ab3f6e6bf2af
+msgid "SCAN={Name}"
+msgstr ""
+
+#: ../../chapter_5.rst:229
+# 0222785e557f4a26a8d392ec6f6ade58
+msgid "Sendet an alle Adressen in der entsprechenden Tabelle einen KNX-Read-Befehl, sodass man mit einem Befehl ein komplettes Prozessabbild bekommen kann. Der Abstand der Abfragen kann mittels SENDRATE;x manipuliert werden."
+msgstr ""
+
+#: ../../chapter_5.rst:230
+# e10d97f800cc4d3cbcc4dddd96403a2b
+msgid "BACKGROUNDSCAN={Name}"
+msgstr ""
+
+#: ../../chapter_5.rst:230
+# cab7608cdb9b461a8f80581640c56831
+msgid "Wie vor, führt jedoch einen reduzierten Scan im Hintergrund aus. Abstand der Telegramme = 300ms"
+msgstr ""
+
+#: ../../chapter_5.rst:235
+# 1738358b15d34cc99c683814d61b8966
+msgid "**Beispiele:**"
+msgstr ""
+
+#: ../../chapter_5.rst:242
+# dd9321a71cd94c149ec97e84defd22b3
+msgid "Löst die Abfrage der Gruppenadressen, wie z.B. unter [TABLE=Schlafzimmer] definiert aus. Es können auch mehre Tabellen gleichzeitig abgefragt werden."
+msgstr ""
+
+#: ../../chapter_5.rst:248
+# c92fda47cb494764b766f996fe8329c1
+msgid "Löst den Hintergrundscan der Tabelle Schlafzimmer aus. Ein Hintergrundscan wird fix mit ca. 3 Telegramme/s ausgeführt."
+msgstr ""
+
+#: ../../chapter_5.rst:254
+#: ../../chapter_5.rst:260
+# bb8f5c9f35da4adc95331b21e6156ae6
+# 9f6296f2ea334f6fa0f54a5fa30db712
+msgid "Setzt den Wert der Gruppenadresse 1/2/3 auf 1"
+msgstr ""
+
+#: ../../chapter_5.rst:266
+# ebe3671670cf4845aca211d19f3cf124
+msgid "Setzt den Wert der Gruppenadresse 0/0/1 auf die aktuelle Systemzeit. Die fixe Systemvariable [TIME] ist im exakten Format für die Verwendung im KNX System formatiert. Gleiches gilt für die Verwendung der fixen Systemvariable [DATE]."
+msgstr ""
+
+#: ../../chapter_5.rst:272
+# 5a029152a8804aa985b067a7e1792996
+msgid "Wertabfrage der Gruppenadresse 1/2/33"
+msgstr ""
+

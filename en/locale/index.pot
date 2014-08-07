@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, nomos
+# This file is distributed under the same license as the documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: documentation 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-07 11:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../index.rst:7
+# a217f5aa26cb42f6a4a4ce02ebd4654b
+msgid "Welcome to documentation's documentation!"
+msgstr ""
+
+#: ../../index.rst:9
+# b9c9adfd8f7c46deb84649015fdda140
+msgid "Contents:"
+msgstr ""
+
+#: ../../index.rst:24
+# 6c38bcf3d77441e5b6f4e49624453bca
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:26
+# fefaf2c00bfd4556bee5f37cfd16840f
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:27
+# 453859f4bc144fc0901541573ddde016
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:28
+# aaafe4abd8a94b049a0892e4ed61950e
+msgid ":ref:`search`"
+msgstr ""
+
