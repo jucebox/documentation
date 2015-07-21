@@ -12,11 +12,9 @@ Contents:
 	:numbered:
 	:maxdepth: 2
 
-	Kapitel 1 </chapter_1.rst>
-	Kapitel 2 </chapter_2.rst>
-	Kapitel 3 </chapter_3.rst>
-	Kapitel 4 </chapter_4.rst>
-	KNXnet </chapter_5.rst>
+	Supported Systems</chapter_1.rst>
+	Technical Details</chapter_2.rst>
+	
 
 
 
