@@ -1,6 +1,6 @@
 JUCEBOX Certified Devices
 =========
-Z-Wave Brands and Devices
+Brands and Devices
 --------
 AeoTec
 ^^^^^^^^^^^
