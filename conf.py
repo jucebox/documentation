@@ -50,7 +50,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'documentation'
-copyright = u'2014, nomos'
+copyright = u'2014, JUCEBOX'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -268,9 +268,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'documentation'
-epub_author = u'nomos'
-epub_publisher = u'nomos'
-epub_copyright = u'2014, nomos'
+epub_author = u'JUCEBOX'
+epub_publisher = u'JUCEBOX'
+epub_copyright = u'2014, JUCEBOX'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'documentation'
