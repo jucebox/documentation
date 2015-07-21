@@ -29,14 +29,12 @@ Most of the Important devices in building control, and IoT work on TCP/IP.
 
 IR (InfraRed)
 ---------
-
 The jOS support IR though most IR/IP Interfces like Global Cache™. Full learning capibities of any device, with the ability to submit your device to us to add to the library of devices, Already we support most of the main manufactures.
 
 JUCEBOX will ship with IR onboard, with a Sender and Reciever. These will be active in a later jOS release mid 2016
 
 Philips HUE™
 ---------
-
 The jOS also supports HUE Lighting of the Philips corporation. Recognition of the HUE Bridge in the network comes about fully automatically by tapping the „Learn“ Key of the bridge. The command class is then ready to use. No additional configuration file is needed. One can see in the log whether an HUE Bridge is recognized. When an HUE Bridge is on hand, specific data on the bridge will also be returned. The log also gives information on lighting fixtures reporting through the HUE Bridge
 
 Note: A Later update will allow the HUE to connect without the Bridge.
@@ -108,7 +106,6 @@ JUCEBOX Ltd will relase a HDMI(CEC) breakout box for controlling other CEC Devic
 
 iTunes & Apple TV (Apple Remote)
 ---------
-
 iTunes and AppleTV control. At System Start there is an attempt to connect each connected library or apple tv. When the application within iTunes or the Private-Clearance/Homesharing of AppleTV is activated, the jOS system recognizes this fully automatically. When this occurs, the rudimentary Remote Command set are at your disposal.
 
 When the pairing is executed, an extended command set becomes available for control. The extended set of commands, however, is at hand solely for controlling a „remote“ iTunes. Always on hand for AppleTV, regardless of whether it is connected by Private-Clearance/Homesharing or through the Pairing Method, is only the rudimentary Remote Command Set.
