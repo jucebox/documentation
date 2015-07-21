@@ -26,7 +26,6 @@ Smart Switch 6
 Touch Panels
 Water Sensor
 
-See http://aeotec.com/homeautomation for more information 
 
 Fibaro
 --------
@@ -39,3 +38,4 @@ SmartThings
 
 NinjaBlocks
 ---------
+Ninja Blocks
