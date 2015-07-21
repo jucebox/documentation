@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'documentation'
+project = u'JUCEBOX Documentation'
 copyright = u'2014, JUCEBOX'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -202,8 +202,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'documentation.tex', u'documentation Documentation',
-   u'nomos', 'manual'),
+  ('index', 'documentation.tex', u'JUCEBOX Documentation',
+   u'JUCEBOX', 'Documentation'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -232,8 +232,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'documentation', u'documentation Documentation',
-     [u'nomos'], 1)
+    ('index', 'documentation', u'JUCEBOX Documentation',
+     [u'JUCEBOX'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -246,8 +246,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'documentation', u'documentation Documentation',
-   u'nomos', 'documentation', 'One line description of project.',
+  ('index', 'Documentation', u'JUCEBOX Documentation',
+   u'JUCEBOX', 'Documentation', 'JUCEBOX is the world’s smartest Universal Device Communicator for home or business, opening up a whole new world of possibilities.',
    'Miscellaneous'),
 ]
 
@@ -267,7 +267,7 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'documentation'
+epub_title = u'JUCEBOX Documentation'
 epub_author = u'JUCEBOX'
 epub_publisher = u'JUCEBOX'
 epub_copyright = u'2014, JUCEBOX'
