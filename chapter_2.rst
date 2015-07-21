@@ -1,6 +1,5 @@
 JUCEBOX Certified Devices
 =========
-
 Z-Wave Brands and Devices
 --------
 AeoTec
@@ -25,17 +24,12 @@ Smart Strip
 Smart Switch 6
 Touch Panels
 Water Sensor
-
-
 Fibaro
---------
-
+^^^^^^^^^^^
 Yale
---------
-
+^^^^^^^^^^^
 SmartThings
---------
-
+^^^^^^^^^^^
 NinjaBlocks
----------
+^^^^^^^^^^^
 Ninja Blocks

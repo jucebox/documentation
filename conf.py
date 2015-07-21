@@ -247,7 +247,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'Documentation', u'JUCEBOX Documentation',
-   u'JUCEBOX', 'Documentation', 'JUCEBOX is the world’s smartest Universal Device Communicator for home or business, opening up a whole new world of possibilities.',
+   u'JUCEBOX', 'Documentation', 'JUCEBOX is the world’s smartest Universal Device Communicator for home or business',
    'Miscellaneous'),
 ]
 
