@@ -5,6 +5,12 @@ Z-Wave
 --------
 Z-Wave technology minimizes power consumption so that it is suitable for battery-operated devices. Z-Wave is designed to provide, reliable, low-latency transmission of small data packets at data rates up to 100kbit/s,[1] unlike Wi-Fi and other IEEE 802.11-based wireless LAN systems that are designed primarily for high data rates. Z-Wave operates in the sub-gigahertz frequency range, around 900 MHz. This band competes with some cordless telephones and other consumer electronics devices, but avoids interference with Wi-Fi, Bluetooth and other systems that operate on the crowded 2.4 GHz band. Z-Wave is designed to be easily embedded in consumer electronics products, including battery operated devices such as remote controls, smoke alarms and security sensors.
 
+Z-Wave components must be reported to the jOS. To do this, the Z-Wave interface has to be set to the Include Mode. The Include Mode is active for around 30 seconds. The relevant Z-Wave device has to be picked up within that time. This occurs as a rule by tapping the Mode or Program key three times at short intervals (1s). The exact procedure can be found in the description of the devices being used.
+
+A successful reporting of the Z-Wave components to the jOS system is possible only if the components are also present in the Z-Wave databank. There is also the possibility to create one’s own databank files and to introduce them manually into the databank of the jOS. In this case, the appropriate commands are available. If you happen to have a component that is not recognized, we nevertheless recommand that you contact JUCEBOX Support to get it added.
+
+The Z-Wave databank of the jOS is based on the data of Pepper One GmbH (http://www.pepper1.net), the certification arm of the Z-Wave Alliance. The jOS system has direct access to the updates of the Pepper One Datenbank. It is therefore recommended that any updating of the databank be accomplished before the inclusion of new devices. An appropriate possibility for this purpose is available in the Admin Portal
+
 ZigBee
 --------
 ZigBee is a specification for a suite of high-level communication protocols used to create personal area networks built from small, low-power digital radios. ZigBee is based on an IEEE 802.15.4 standard. Its low power consumption limits transmission distances to 10–100 meters line-of-sight, depending on power output and environmental characteristics,[1] ZigBee devices can transmit data over long distances by passing data through a mesh network of intermediate devices to reach more distant ones. ZigBee is typically used in low data rate applications that require long battery life and secure networking (ZigBee networks are secured by 128 bit symmetric encryption keys.) ZigBee has a defined rate of 250 kbit/s, best suited for intermittent data transmissions from a sensor or input device. Applications include wireless light switches, electrical meters with in-home-displays, traffic management systems, and other consumer and industrial equipment that requires short-range low-rate wireless data transfer. The technology defined by the ZigBee specification is intended to be simpler and less expensive than other wireless personal area networks (WPANs), such as Bluetooth or Wi-Fi.
@@ -23,6 +29,25 @@ Most of the Important devices in building control, and IoT work on TCP/IP.
 
 IR (InfraRed)
 ---------
+
+Philips HUE
+---------
+
+The jOS also supports HUE Lighting of the Philips corporation. Recognition of the HUE Bridge in the network comes about fully automatically by tapping the „Learn“ Key of the bridge. The command class is then ready to use. No additional configuration file is needed. One can see in the log whether an HUE Bridge is recognized. When an HUE Bridge is on hand, specific data on the bridge will also be returned. The log also gives information on lighting fixtures reporting through the HUE Bridge
+
+Note: A Later update will allow the HUE to connect without the Bridge.
+
+Technical Data:
+
+Maximum number of lamps: 50 per Bridge
+
+Zigbee Light link: Protocol 1.0 certified
+
+Frequency range: 2400-2483.5 MHz
+
+
+
+
 KNXnet/IP/1
 ^^^^^^^^^^^
 KNXnet/IP/2
