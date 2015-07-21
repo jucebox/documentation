@@ -15,6 +15,14 @@ ZigBee
 --------
 The jOS supports ZigBee, ZigBee is a specification for a suite of high-level communication protocols used to create personal area networks built from small, low-power digital radios. ZigBee is based on an IEEE 802.15.4 standard. Its low power consumption limits transmission distances to 10–100 meters line-of-sight, depending on power output and environmental characteristics,[1] ZigBee devices can transmit data over long distances by passing data through a mesh network of intermediate devices to reach more distant ones. ZigBee is typically used in low data rate applications that require long battery life and secure networking (ZigBee networks are secured by 128 bit symmetric encryption keys.) ZigBee has a defined rate of 250 kbit/s, best suited for intermittent data transmissions from a sensor or input device. Applications include wireless light switches, electrical meters with in-home-displays, traffic management systems, and other consumer and industrial equipment that requires short-range low-rate wireless data transfer. The technology defined by the ZigBee specification is intended to be simpler and less expensive than other wireless personal area networks (WPANs), such as Bluetooth or Wi-Fi.
 
+Cube Sensors
+--------
+CubeSensors are incredibly easy to set up. We know your home is not a science lab. The Cubes are designed to look equally good on your designer table, your night stand or the coffee table you got from your parents. Use them wirelessly and recharge periodically or keep them plugged in for convenience.
+
+Each Cube is so small it fits in the palm of your hand. Its smooth polycarbonate exterior is soft to touch. The front and back metal panels with precision crafted holes will shine in the sunlight. A subtle glow will let you know when it's time to act quickly.
+
+Expand the function of this Cube though the JUCEBOX but automaticly opening a Window to let in fresh air, or turn on the Aircon, Let JUCEBOX automaticly control the informaiton received from the CUBE Sensor, but make sure when the alarm is armed not to Open the Window.
+
 Bluetooth 4.2
 --------
 Bluetooth is a wireless technology standard for exchanging data over short distances (using short-wavelength UHF radio waves in the ISM band from 2.4 to 2.485 GHz[4]) from fixed and mobile devices, and building personal area networks (PANs). Invented by telecom vendor Ericsson in 1994,[5] it was originally conceived as a wireless alternative to RS-232 data cables. It can connect several devices, overcoming problems of synchronization.
@@ -38,14 +46,6 @@ Philips HUE™
 The jOS also supports HUE Lighting of the Philips corporation. Recognition of the HUE Bridge in the network comes about fully automatically by tapping the „Learn“ Key of the bridge. The command class is then ready to use. No additional configuration file is needed. One can see in the log whether an HUE Bridge is recognized. When an HUE Bridge is on hand, specific data on the bridge will also be returned. The log also gives information on lighting fixtures reporting through the HUE Bridge
 
 Note: A Later update will allow the HUE to connect without the Bridge.
-
-Technical Data:
-
-Maximum number of lamps: 50 per Bridge
-
-Zigbee Light link: Protocol 1.0 certified
-
-Frequency range: 2400-2483.5 MHz
 
 SONOS
 ---------
@@ -110,5 +110,28 @@ iTunes and AppleTV control. At System Start there is an attempt to connect each 
 
 When the pairing is executed, an extended command set becomes available for control. The extended set of commands, however, is at hand solely for controlling a „remote“ iTunes. Always on hand for AppleTV, regardless of whether it is connected by Private-Clearance/Homesharing or through the Pairing Method, is only the rudimentary Remote Command Set.
 
+
+LoRa Wireless
+---------
+Out of the 50 billion predicted nodes to be connected to the Internet by 2020 fewer than 10% are predicted to use cellular technology. Telecommunications companies will need long range, high capacity systems to consolidate the fragmented battery operated wireless market for sensor networks, smart cities, smart metering, security systems, smart home, and industrial control. With our LoRaTM RF platform, we have developed a 2-way wireless solution that complements M2M cellular or WiFi infrastructure, and provides a low-cost way to connect battery operated and mobile devices to either the network infrastructure or end point.
+
+JUCEBOX has LoRa onboard and full integrated.
+
+Koubachi
+---------
+The Koubachi is for plant owners looking for advice when and how to care for their plants. You can use it with the JUCEBOX, The plant sensors connects first to Koubachi system though the Koubachi website or APP, then precise measurements of the plants growing conditions (soil moisture, air and soil temperature, lighting conditions) will provide additional and more accurate care advice, then this can trigger event in JUCEBOX to open a valve on any other system, the conditons can change depending on if your home or at the office, and can automaticly stop if you are on the lawn playing with your kids. This can also integrate to you local weather forcast. 
+
+With the addition of Koubachi Smart Watering System, JUCEBOX knows when to water and when not. The Koubachi Sonsor automatically adjusts to changing soil moisture and get the weather forcast. No programming needed. No more over- or under-watering due to pre-set schedules. Water is turned on/off so that your plants receive the optimal amount of water at the right time. Set your alarm and the system knows its safe to water the garden if its needed that is.
+
+NFC
+---------
+Near field communication (NFC) is the set of protocols that enables smartphones and other devices to establish radio communication with each other by touching the devices together or bringing them into proximity to a distance of typically 10 cm (3.9 in) or less.
+
+JUCEBOX uses this to setup smart devices and future this will help to pair your smartphones, NFC can also be used as Access control, POP your phone ontop of the JUCEBOX to disarm your alarm and set your heating to comfort mode.
+
+
+IQRF
+---------
+IQRF is a platform for low speed, low power, reliable and easy to use wireless connectivity e.g. for telemetry, industrial control and building automation. It can be used with any electronic equipment. You can use it whenever you need wireless information transfer, e.g. remote control, monitor, alarm, displaying of remotely acquired data or connection of more devices to a wireless network.
 
 .........................
