@@ -134,4 +134,3 @@ IQRF
 ----
 IQRF is a platform for low speed, low power, reliable and easy to use wireless connectivity e.g. for telemetry, industrial control and building automation. It can be used with any electronic equipment. You can use it whenever you need wireless information transfer, e.g. remote control, monitor, alarm, displaying of remotely acquired data or connection of more devices to a wireless network.
 
-.........................
