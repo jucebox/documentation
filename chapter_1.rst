@@ -89,7 +89,9 @@ EIS 15	‘Character String’ (14 Byte)
 
 C-Bus/IP/RS232
 ---------
+C-Bus is a microprocessor-based control and management system for Buildings and Homes.  It is used to control lighting and other electrical services such as pumps, Audio Visual Devices, Motors, etc. Whether simple ON/OFF control of a lighting circuit, or variable (analogue) type control, such as electronic dimmable fluorescent ballasts, C-Bus can be used to easily control virtually any type of electrical load.
 
+The jOS can control C-Bus thought the C-Bus Enable Program, allowing control of any C-Bus system over IP or RS232, this will allow you to control and connect C-Bus to any other system on the JUCEBOX.
 
 GIRA Homeserver KO-Gateway
 ---------
